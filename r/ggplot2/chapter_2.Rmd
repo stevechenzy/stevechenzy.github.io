@@ -1,0 +1,30 @@
+---
+title: 第二章作业
+author: ''
+date: '2020-02-17'
+slug: chapter_2
+categories:
+  - R
+tags: []
+output:
+  blogdown::html_page:
+    highlight: tango
+---
+
+
+
+#### 1. 加载ggplot2 到工作环境中
+```{R} 
+library(ggplot2)
+mpg
+```
+
+
+
+
+
+#### 2. 做一个基本的散点图
+```{R}
+ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point()
+```

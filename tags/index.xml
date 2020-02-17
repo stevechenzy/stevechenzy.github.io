@@ -6,37 +6,9 @@
     <description>Recent content in Tags on 北河沿</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
-    <lastBuildDate>Sat, 15 Feb 2020 10:21:41 +0800</lastBuildDate>
     
 	<atom:link href="https://stevechenzy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>android</title>
-      <link>https://stevechenzy.github.io/tags/android/</link>
-      <pubDate>Sat, 15 Feb 2020 10:21:41 +0800</pubDate>
-      
-      <guid>https://stevechenzy.github.io/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Application</title>
-      <link>https://stevechenzy.github.io/tags/application/</link>
-      <pubDate>Sat, 15 Feb 2020 10:21:41 +0800</pubDate>
-      
-      <guid>https://stevechenzy.github.io/tags/application/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>App</title>
-      <link>https://stevechenzy.github.io/tags/app/</link>
-      <pubDate>Sat, 15 Feb 2020 10:21:34 +0800</pubDate>
-      
-      <guid>https://stevechenzy.github.io/tags/app/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>

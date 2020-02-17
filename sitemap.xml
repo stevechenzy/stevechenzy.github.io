@@ -3,37 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://stevechenzy.github.io/insights/</loc>
-    <lastmod>2020-02-17T06:57:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/digital/</loc>
-    <lastmod>2020-02-17T06:55:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/calligraphy/</loc>
-    <lastmod>2020-02-17T06:53:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/r/hugo/</loc>
-    <lastmod>2020-02-17T06:51:13+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/r/ggplots/</loc>
-    <lastmod>2020-02-17T06:50:46+08:00</lastmod>
+    <loc>https://stevechenzy.github.io/r/ggplot2/</loc>
+    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://stevechenzy.github.io/apps/</loc>
-    <lastmod>2020-02-15T10:21:41+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://stevechenzy.github.io/docs/</loc>
+    <loc>https://stevechenzy.github.io/r/hugo/</loc>
   </url>
   
   <url>
@@ -41,101 +20,44 @@
   </url>
   
   <url>
-    <loc>https://stevechenzy.github.io/docs/getting-started/</loc>
-    <lastmod>2020-02-16T21:03:12+08:00</lastmod>
+    <loc>https://stevechenzy.github.io/calligraphy/</loc>
   </url>
   
   <url>
-    <loc>https://stevechenzy.github.io/docs/getting-started/overview/</loc>
+    <loc>https://stevechenzy.github.io/digital/</loc>
   </url>
   
   <url>
-    <loc>https://stevechenzy.github.io/r/ggplots/chapter_1/</loc>
-    <lastmod>2020-02-17T06:50:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/apps/pomodoro_introduction/</loc>
-    <lastmod>2020-02-15T10:21:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/docs/getting-started/shortcodes/</loc>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/insights/thinking_structure/</loc>
-    <lastmod>2020-02-17T06:57:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/</loc>
-    <lastmod>2020-02-17T06:57:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/digital/digital_leadership/</loc>
-    <lastmod>2020-02-17T06:55:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/calligraphy/xiokai_start/</loc>
-    <lastmod>2020-02-17T06:53:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/r/hugo/setup_process/</loc>
-    <lastmod>2020-02-17T06:51:13+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/docs/getting-started/code_highlight/</loc>
-    <lastmod>2020-02-16T21:03:12+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/r/ggplots/r_highlight/</loc>
-    <lastmod>2020-02-16T21:03:12+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/tags/android/</loc>
-    <lastmod>2020-02-15T10:21:41+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/categories/application/</loc>
-    <lastmod>2020-02-15T10:21:41+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/tags/application/</loc>
-    <lastmod>2020-02-15T10:21:41+08:00</lastmod>
+    <loc>https://stevechenzy.github.io/insights/</loc>
   </url>
   
   <url>
     <loc>https://stevechenzy.github.io/categories/</loc>
-    <lastmod>2020-02-15T10:21:41+08:00</lastmod>
+    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://stevechenzy.github.io/categories/r/</loc>
+    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://stevechenzy.github.io/</loc>
+    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://stevechenzy.github.io/r/ggplot2/chapt_0/</loc>
+    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://stevechenzy.github.io/r/ggplot2/chapter_2/</loc>
+    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://stevechenzy.github.io/tags/</loc>
-    <lastmod>2020-02-15T10:21:41+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/apps/pomodoro_introduction_cn/</loc>
-    <lastmod>2020-02-15T10:21:41+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/tags/app/</loc>
-    <lastmod>2020-02-15T10:21:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/categories/%E4%BB%A3%E7%A0%81/</loc>
-    <lastmod>2020-02-15T10:21:34+08:00</lastmod>
   </url>
   
 </urlset>
