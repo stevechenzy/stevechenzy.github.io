@@ -5,6 +5,8 @@
     <link>https://stevechenzy.github.io/docs/getting-started/</link>
     <description>Recent content in Getting Started on 北河沿</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>cn-zh</language>
+    <lastBuildDate>Sun, 16 Feb 2020 21:03:12 +0800</lastBuildDate>
     
 	<atom:link href="https://stevechenzy.github.io/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
     
@@ -29,6 +31,16 @@ This way, you can side step complex html and css boilerplate in your content fil
       <description>Why shortcodes? While markdown is sufficient to produce simple pages, it&amp;rsquo;s insufficient where complex page structures are needed. Thusly, whenever we need special styling, shortcodes compliment the shortcomings of markdown.
 This way, you can side step complex html and css boilerplate in your content files.
 Sometimes, the shortcode will wrap content, sometimes it won&amp;rsquo;t. When content is wrapped, a closing shortcode tag is needed. Please see the link I provided above and the markdown files for examples.</description>
+    </item>
+    
+    <item>
+      <title>Code_highlight</title>
+      <link>https://stevechenzy.github.io/docs/getting-started/code_highlight/</link>
+      <pubDate>Sun, 16 Feb 2020 21:03:12 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/docs/getting-started/code_highlight/</guid>
+      <description>This a code of R
+1 2  this.ab = 3; printf(&amp;#34;hello world&amp;#34;);   does this work?</description>
     </item>
     
   </channel>

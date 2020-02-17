@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>代码 on 北河沿</title>
+    <link>https://stevechenzy.github.io/categories/%E4%BB%A3%E7%A0%81/</link>
+    <description>Recent content in 代码 on 北河沿</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn-zh</language>
+    <lastBuildDate>Sat, 15 Feb 2020 10:21:34 +0800</lastBuildDate>
+    
+	<atom:link href="https://stevechenzy.github.io/categories/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pomodoro, an Android App </title>
+      <link>https://stevechenzy.github.io/apps/pomodoro_introduction/</link>
+      <pubDate>Sat, 15 Feb 2020 10:21:34 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/apps/pomodoro_introduction/</guid>
+      <description>中文说明
+ Download Down Load the App for your phone Download Apk Or use your phone to scan the qr-code to download:
+note：WeChat scanner could block the external link. please use other QR-scanner on the phone
+  Why Another countdown timer Why should we develop another pomodoro (focused timer)? The current existing Apps are too distracting. They either have too fancy outlook, keep asking for upgrade to pro version, or showing ads.</description>
+    </item>
+    
+  </channel>
+</rss>

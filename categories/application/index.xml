@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Application on 北河沿</title>
+    <link>https://stevechenzy.github.io/categories/application/</link>
+    <description>Recent content in Application on 北河沿</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn-zh</language>
+    <lastBuildDate>Sat, 15 Feb 2020 10:21:41 +0800</lastBuildDate>
+    
+	<atom:link href="https://stevechenzy.github.io/categories/application/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>专心倒计时 Pomodoro</title>
+      <link>https://stevechenzy.github.io/apps/pomodoro_introduction_cn/</link>
+      <pubDate>Sat, 15 Feb 2020 10:21:41 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/apps/pomodoro_introduction_cn/</guid>
+      <description>English Version
+&amp;ldquo;专心倒计时“（Pomodoro）是一个简单的安卓（Android）设备上可以安装使用的App
+ 下载安装 下载github上最新版 APK 文件 或者用手机扫描二维码下载（微信的扫一扫可能会屏蔽，使用手机上其它的二维码扫描软件）:
+ 开发的缘由  市场上的番茄钟应用都太炫、充斥了广告和推广信息，甚至申请各种不必要的权限，完全是与专心致志的目标背道而驰。
+求人不如求己，自己开发一个吧！
+&amp;ldquo;前软件工程师&amp;quot;开发的第一个安卓手机应用，极简单、极干净、不要额外的权限，不要广告。满足自己看书、工作甚至培训上课的需要。
+使用方法：  启动/暂停：双击 屏幕, 长按 暂停。 停止/取消：水平从左边缘划到右边缘 切换预设时间（45,30, 25, 15, 10, 7, 5, 3, 1分钟）：在定时器不处于运行或暂停的状态时，水平滑过屏幕 自由调整时间：缩放（2指），滚动（1指，垂直方向）  如果倒计时时间很长，手机会锁屏或休眠，需要允许&amp;rdquo;唤醒&amp;ldquo;的权限，和打开这个app的&amp;rdquo;锁屏通知&amp;ldquo;开关。
+下载使用指南的视频
+ 培训教室场景： </description>
+    </item>
+    
+  </channel>
+</rss>

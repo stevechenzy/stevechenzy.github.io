@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Compose on 北河沿</title>
+    <title>北河沿</title>
     <link>https://stevechenzy.github.io/</link>
-    <description>Recent content in Compose on 北河沿</description>
+    <description>Recent content on 北河沿</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>cn-zh</language>
+    <lastBuildDate>Mon, 17 Feb 2020 06:57:47 +0800</lastBuildDate>
     
 	<atom:link href="https://stevechenzy.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -21,6 +23,27 @@ This way, you can side step complex html and css boilerplate in your content fil
     </item>
     
     <item>
+      <title>Chapter_1</title>
+      <link>https://stevechenzy.github.io/r/ggplots/chapter_1/</link>
+      <pubDate>Mon, 17 Feb 2020 06:50:46 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/ggplots/chapter_1/</guid>
+      <description>jand</description>
+    </item>
+    
+    <item>
+      <title>Pomodoro, an Android App </title>
+      <link>https://stevechenzy.github.io/apps/pomodoro_introduction/</link>
+      <pubDate>Sat, 15 Feb 2020 10:21:34 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/apps/pomodoro_introduction/</guid>
+      <description>中文说明
+ Download Down Load the App for your phone Download Apk Or use your phone to scan the qr-code to download:
+note：WeChat scanner could block the external link. please use other QR-scanner on the phone
+  Why Another countdown timer Why should we develop another pomodoro (focused timer)? The current existing Apps are too distracting. They either have too fancy outlook, keep asking for upgrade to pro version, or showing ads.</description>
+    </item>
+    
+    <item>
       <title>Shortcodes</title>
       <link>https://stevechenzy.github.io/docs/getting-started/shortcodes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -29,6 +52,81 @@ This way, you can side step complex html and css boilerplate in your content fil
       <description>Why shortcodes? While markdown is sufficient to produce simple pages, it&amp;rsquo;s insufficient where complex page structures are needed. Thusly, whenever we need special styling, shortcodes compliment the shortcomings of markdown.
 This way, you can side step complex html and css boilerplate in your content files.
 Sometimes, the shortcode will wrap content, sometimes it won&amp;rsquo;t. When content is wrapped, a closing shortcode tag is needed. Please see the link I provided above and the markdown files for examples.</description>
+    </item>
+    
+    <item>
+      <title>Thinking_structure</title>
+      <link>https://stevechenzy.github.io/insights/thinking_structure/</link>
+      <pubDate>Mon, 17 Feb 2020 06:57:47 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/insights/thinking_structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Digital_leadership</title>
+      <link>https://stevechenzy.github.io/digital/digital_leadership/</link>
+      <pubDate>Mon, 17 Feb 2020 06:55:04 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/digital/digital_leadership/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xiokai_start</title>
+      <link>https://stevechenzy.github.io/calligraphy/xiokai_start/</link>
+      <pubDate>Mon, 17 Feb 2020 06:53:02 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/calligraphy/xiokai_start/</guid>
+      <description>小楷的缘分
+2019年开始正经的练习毛笔字。
+小区的老年大学请了区里的张哲（？音）老师来讲书法入门，我去了一次，从此开始了曲折的练习。</description>
+    </item>
+    
+    <item>
+      <title>Setup_process</title>
+      <link>https://stevechenzy.github.io/r/hugo/setup_process/</link>
+      <pubDate>Mon, 17 Feb 2020 06:51:13 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/hugo/setup_process/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code_highlight</title>
+      <link>https://stevechenzy.github.io/docs/getting-started/code_highlight/</link>
+      <pubDate>Sun, 16 Feb 2020 21:03:12 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/docs/getting-started/code_highlight/</guid>
+      <description>This a code of R
+1 2  this.ab = 3; printf(&amp;#34;hello world&amp;#34;);   does this work?</description>
+    </item>
+    
+    <item>
+      <title>R Code highlight</title>
+      <link>https://stevechenzy.github.io/r/ggplots/r_highlight/</link>
+      <pubDate>Sun, 16 Feb 2020 21:03:12 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/ggplots/r_highlight/</guid>
+      <description>这只是一个测试R的代码渲染的页面
+1 2 3  library(&amp;#34;ggplot2&amp;#34;) ggplot(mpg, aes(cty, hwy, color=class)) + geom_point()   </description>
+    </item>
+    
+    <item>
+      <title>专心倒计时 Pomodoro</title>
+      <link>https://stevechenzy.github.io/apps/pomodoro_introduction_cn/</link>
+      <pubDate>Sat, 15 Feb 2020 10:21:41 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/apps/pomodoro_introduction_cn/</guid>
+      <description>English Version
+&amp;ldquo;专心倒计时“（Pomodoro）是一个简单的安卓（Android）设备上可以安装使用的App
+ 下载安装 下载github上最新版 APK 文件 或者用手机扫描二维码下载（微信的扫一扫可能会屏蔽，使用手机上其它的二维码扫描软件）:
+ 开发的缘由  市场上的番茄钟应用都太炫、充斥了广告和推广信息，甚至申请各种不必要的权限，完全是与专心致志的目标背道而驰。
+求人不如求己，自己开发一个吧！
+&amp;ldquo;前软件工程师&amp;quot;开发的第一个安卓手机应用，极简单、极干净、不要额外的权限，不要广告。满足自己看书、工作甚至培训上课的需要。
+使用方法：  启动/暂停：双击 屏幕, 长按 暂停。 停止/取消：水平从左边缘划到右边缘 切换预设时间（45,30, 25, 15, 10, 7, 5, 3, 1分钟）：在定时器不处于运行或暂停的状态时，水平滑过屏幕 自由调整时间：缩放（2指），滚动（1指，垂直方向）  如果倒计时时间很长，手机会锁屏或休眠，需要允许&amp;rdquo;唤醒&amp;ldquo;的权限，和打开这个app的&amp;rdquo;锁屏通知&amp;ldquo;开关。
+下载使用指南的视频
+ 培训教室场景： </description>
     </item>
     
   </channel>
