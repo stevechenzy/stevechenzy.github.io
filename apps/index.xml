@@ -17,9 +17,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://stevechenzy.github.io/apps/_index__/</guid>
-      <description>写代码，在我一直是个乐趣。创造一个东西，然后它就自己去运行了。
-过去写了很多年的程序，都是专业用的。有空了写点好玩的，也是一种乐趣。
-现在拿的出手的就是个“番茄倒计时”&amp;ndash;Pomodoro了，没有开发者账号，就放在Github上自己下载吧，也有源代码可以参考。写的不好，是初学Android是写着自用。</description>
+      <description>写代码，在我一直是个乐趣。创造一个东西，然后它就自己去运行了。 过去写了很多年的程</description>
     </item>
     
     <item>
@@ -28,11 +26,7 @@
       <pubDate>Wed, 05 Feb 2020 10:21:41 +0800</pubDate>
       
       <guid>https://stevechenzy.github.io/apps/pomodoro_introduction_cn/</guid>
-      <description>English Version
-  &amp;ldquo;专心倒计时“（Pomodoro）是一个简单的安卓（Android）设备上可以安装使用的App
-下载安装 下载github上最新版 Apk
-或者用手机扫描二维码下载（微信的扫一扫可能会屏蔽，使用手机上其它的二维码扫描软件）:
-  开发的缘由  市场上的番茄钟应用都太炫、充斥了广告和推广信息，甚至申请各种不必要的权限，完全是与专心致志的目标背道而驰。</description>
+      <description>专心倒计时（Pomodoro）是我几年前为上课写的一个简单的安卓（Android）设备上可以安装使用的App， 开源在Github上了。</description>
     </item>
     
     <item>
@@ -41,8 +35,7 @@
       <pubDate>Wed, 05 Feb 2020 10:21:34 +0800</pubDate>
       
       <guid>https://stevechenzy.github.io/apps/pomodoro_introduction/</guid>
-      <description>中文说明
-  Download Download Latest Apk for your phone</description>
+      <description>&lt;strong&gt;Pomodoro&lt;/strong&gt; is an extremely simple Android App writted by me 2 years ago, for my own training session</description>
     </item>
     
   </channel>

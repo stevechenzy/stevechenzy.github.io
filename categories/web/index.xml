@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on 北河沿</title>
+    <link>https://stevechenzy.github.io/categories/web/</link>
+    <description>Recent content in web on 北河沿</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 22 Feb 2020 21:54:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://stevechenzy.github.io/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo 模版 Northendlab</title>
+      <link>https://stevechenzy.github.io/r/hugo/theme_northendlab/</link>
+      <pubDate>Sat, 22 Feb 2020 21:54:54 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/hugo/theme_northendlab/</guid>
+      <description>这个模版的特点，如何对它进行改造的。</description>
+    </item>
+    
+    <item>
+      <title>使用Hugo建本站的过程</title>
+      <link>https://stevechenzy.github.io/r/hugo/setup_process/</link>
+      <pubDate>Mon, 17 Feb 2020 06:51:13 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/hugo/setup_process/</guid>
+      <description>如何用gohugo建设一个静态网站，hugo 提出了一种新的建站理念：静态网站&amp;ndash;简单、安全、快捷。非常适合与文字写作的网站。</description>
+    </item>
+    
+  </channel>
+</rss>

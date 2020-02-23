@@ -1,6 +1,6 @@
 ---
 title: 第二章作业
-author: ''
+author: '北河沿'
 date: '2020-02-17'
 slug: chapter_2
 categories:
@@ -8,6 +8,7 @@ categories:
   - ggplot2
 tags: []
 type : "post" 
+summary: "加载ggplot2到工作环境，制作最简单的三点图。"
 output:
   blogdown::html_page:
     highlight: tango

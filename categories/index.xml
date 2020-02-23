@@ -6,10 +6,19 @@
     <description>Recent content in Categories on 北河沿</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 22 Feb 2020 21:54:54 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://stevechenzy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>R</title>
+      <link>https://stevechenzy.github.io/categories/r/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://stevechenzy.github.io/categories/r/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hugo</title>
@@ -17,6 +26,24 @@
       <pubDate>Sat, 22 Feb 2020 21:54:54 +0800</pubDate>
       
       <guid>https://stevechenzy.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>https://stevechenzy.github.io/categories/markdown/</link>
+      <pubDate>Sat, 22 Feb 2020 21:54:54 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/categories/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://stevechenzy.github.io/categories/web/</link>
+      <pubDate>Sat, 22 Feb 2020 21:54:54 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/categories/web/</guid>
       <description></description>
     </item>
     
@@ -30,29 +57,20 @@
     </item>
     
     <item>
-      <title>ggplot3</title>
-      <link>https://stevechenzy.github.io/categories/ggplot3/</link>
-      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      <title>写字</title>
+      <link>https://stevechenzy.github.io/categories/%E5%86%99%E5%AD%97/</link>
+      <pubDate>Mon, 17 Feb 2020 06:53:02 +0800</pubDate>
       
-      <guid>https://stevechenzy.github.io/categories/ggplot3/</guid>
+      <guid>https://stevechenzy.github.io/categories/%E5%86%99%E5%AD%97/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R</title>
-      <link>https://stevechenzy.github.io/categories/r/</link>
-      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      <title>Android</title>
+      <link>https://stevechenzy.github.io/categories/android/</link>
+      <pubDate>Wed, 05 Feb 2020 10:21:41 +0800</pubDate>
       
-      <guid>https://stevechenzy.github.io/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tools</title>
-      <link>https://stevechenzy.github.io/categories/tools/</link>
-      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://stevechenzy.github.io/categories/tools/</guid>
+      <guid>https://stevechenzy.github.io/categories/android/</guid>
       <description></description>
     </item>
     

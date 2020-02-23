@@ -3,13 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://stevechenzy.github.io/r/hugo/</loc>
-    <lastmod>2020-02-22T21:54:54+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/r/ggplot2/</loc>
-    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
+    <loc>https://stevechenzy.github.io/r/</loc>
+    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -18,17 +13,35 @@
   </url>
   
   <url>
-    <loc>https://stevechenzy.github.io/r/</loc>
-    <lastmod>2020-02-16T21:03:12+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://stevechenzy.github.io/apps/_index__/</loc>
   </url>
   
   <url>
+    <loc>https://stevechenzy.github.io/r/ggplot2/ggplot2_exercises/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stevechenzy.github.io/r/hugo/_index-/</loc>
+  </url>
+  
+  <url>
     <loc>https://stevechenzy.github.io/categories/</loc>
-    <lastmod>2020-02-22T21:54:54+08:00</lastmod>
+    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://stevechenzy.github.io/categories/r/</loc>
+    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://stevechenzy.github.io/r/r/</loc>
+    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://stevechenzy.github.io/</loc>
+    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -42,13 +55,13 @@
   </url>
   
   <url>
-    <loc>https://stevechenzy.github.io/</loc>
+    <loc>https://stevechenzy.github.io/categories/markdown/</loc>
     <lastmod>2020-02-22T21:54:54+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://stevechenzy.github.io/tags/apps/</loc>
-    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
+    <loc>https://stevechenzy.github.io/categories/web/</loc>
+    <lastmod>2020-02-22T21:54:54+08:00</lastmod>
   </url>
   
   <url>
@@ -57,33 +70,18 @@
   </url>
   
   <url>
-    <loc>https://stevechenzy.github.io/categories/ggplot3/</loc>
-    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/categories/r/</loc>
-    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/tags/</loc>
-    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/categories/tools/</loc>
-    <lastmod>2020-02-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/r/ggplot2/chapt_0/</loc>
+    <loc>https://stevechenzy.github.io/r/ggplot2/chapt_1/</loc>
     <lastmod>2020-02-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://stevechenzy.github.io/r/ggplot2/chapter_2/</loc>
     <lastmod>2020-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://stevechenzy.github.io/categories/%E5%86%99%E5%AD%97/</loc>
+    <lastmod>2020-02-17T06:53:02+08:00</lastmod>
   </url>
   
   <url>
@@ -97,17 +95,7 @@
   </url>
   
   <url>
-    <loc>https://stevechenzy.github.io/r/r_highlight/</loc>
-    <lastmod>2020-02-16T21:03:12+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/tags/android/</loc>
-    <lastmod>2020-02-05T10:21:41+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://stevechenzy.github.io/tags/app/</loc>
+    <loc>https://stevechenzy.github.io/categories/android/</loc>
     <lastmod>2020-02-05T10:21:41+08:00</lastmod>
   </url>
   
@@ -137,6 +125,10 @@
   
   <url>
     <loc>https://stevechenzy.github.io/search/</loc>
+  </url>
+  
+  <url>
+    <loc>https://stevechenzy.github.io/tags/</loc>
   </url>
   
   <url>

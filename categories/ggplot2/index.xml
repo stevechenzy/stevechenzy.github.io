@@ -12,12 +12,32 @@
     
     
     <item>
+      <title>ggplot2 练习作业</title>
+      <link>https://stevechenzy.github.io/r/ggplot2/ggplot2_exercises/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/ggplot2/ggplot2_exercises/</guid>
+      <description>R语言中最令人喜欢和有用的就是ggplot2这个做统计图表的神器了，认真地把这本书的作业都做了一下。</description>
+    </item>
+    
+    <item>
+      <title>第一章练习</title>
+      <link>https://stevechenzy.github.io/r/ggplot2/chapt_1/</link>
+      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/ggplot2/chapt_1/</guid>
+      <description>&lt;p&gt;第一章的内容比较简单，关于如何安装ggplot的。有三条命令:&lt;/p&gt;
+&lt;p&gt;安装、环境信息、宽度信息&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>第二章作业</title>
       <link>https://stevechenzy.github.io/r/ggplot2/chapter_2/</link>
       <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://stevechenzy.github.io/r/ggplot2/chapter_2/</guid>
-      <description>pre  code.sourceCode { white-space: pre; position: relative; } pre  code.</description>
+      <description>加载ggplot2到工作环境，制作最简单的三点图。</description>
     </item>
     
   </channel>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on 北河沿</title>
+    <link>https://stevechenzy.github.io/categories/android/</link>
+    <description>Recent content in Android on 北河沿</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 05 Feb 2020 10:21:41 +0800</lastBuildDate>
+    
+	<atom:link href="https://stevechenzy.github.io/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>专心倒计时 Pomodoro</title>
+      <link>https://stevechenzy.github.io/apps/pomodoro_introduction_cn/</link>
+      <pubDate>Wed, 05 Feb 2020 10:21:41 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/apps/pomodoro_introduction_cn/</guid>
+      <description>专心倒计时（Pomodoro）是我几年前为上课写的一个简单的安卓（Android）设备上可以安装使用的App， 开源在Github上了。</description>
+    </item>
+    
+    <item>
+      <title>Pomodoro, an Android App </title>
+      <link>https://stevechenzy.github.io/apps/pomodoro_introduction/</link>
+      <pubDate>Wed, 05 Feb 2020 10:21:34 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/apps/pomodoro_introduction/</guid>
+      <description>&lt;strong&gt;Pomodoro&lt;/strong&gt; is an extremely simple Android App writted by me 2 years ago, for my own training session</description>
+    </item>
+    
+  </channel>
+</rss>
