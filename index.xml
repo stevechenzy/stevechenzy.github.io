@@ -5,22 +5,30 @@
     <link>https://stevechenzy.github.io/</link>
     <description>Recent content on 北河沿</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>cn-zh</language>
-    <lastBuildDate>Mon, 17 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 22 Feb 2020 21:54:54 +0800</lastBuildDate>
     
 	<atom:link href="https://stevechenzy.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Pomodoro, an Android App </title>
-      <link>https://stevechenzy.github.io/apps/pomodoro_introduction/</link>
-      <pubDate>Sat, 15 Feb 2020 10:21:34 +0800</pubDate>
+      <title>Apps</title>
+      <link>https://stevechenzy.github.io/apps/_index__/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://stevechenzy.github.io/apps/pomodoro_introduction/</guid>
-      <description>中文说明
- Download Download the App for your phone Download Apk Or use your phone to scan the qr-code to download:
-note：WeChat scanner could block the external link. please use other QR-scanner on the phone
-  Why Another countdown timer Why should we develop another pomodoro (focused timer)? The current existing Apps are too distracting. They either have too fancy outlook, keep asking for upgrade to pro version, or showing ads.</description>
+      <guid>https://stevechenzy.github.io/apps/_index__/</guid>
+      <description>写代码，在我一直是个乐趣。创造一个东西，然后它就自己去运行了。
+过去写了很多年的程序，都是专业用的。有空了写点好玩的，也是一种乐趣。
+现在拿的出手的就是个“番茄倒计时”&amp;ndash;Pomodoro了，没有开发者账号，就放在Github上自己下载吧，也有源代码可以参考。写的不好，是初学Android是写着自用。</description>
+    </item>
+    
+    <item>
+      <title>Theme_northendlab</title>
+      <link>https://stevechenzy.github.io/r/hugo/theme_northendlab/</link>
+      <pubDate>Sat, 22 Feb 2020 21:54:54 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/hugo/theme_northendlab/</guid>
+      <description>一个可以支持中文站内搜索的Hugo风格。</description>
     </item>
     
     <item>
@@ -29,7 +37,7 @@ note：WeChat scanner could block the external link. please use other QR-scanner
       <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://stevechenzy.github.io/r/ggplot2/chapt_0/</guid>
-      <description>pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.25; } pre  code.sourceCode  span:empty { height: 1.2em; } code.sourceCode  span { color: inherit; text-decoration: inherit; } div.sourceCode { margin: 1em 0; } pre.sourceCode { margin: 0; } @media screen { div.sourceCode { overflow: auto; } } @media print { pre  code.sourceCode { white-space: pre-wrap; } pre  code.</description>
+      <description>pre  code.sourceCode { white-space: pre; position: relative; } pre  code.</description>
     </item>
     
     <item>
@@ -38,25 +46,7 @@ note：WeChat scanner could block the external link. please use other QR-scanner
       <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://stevechenzy.github.io/r/ggplot2/chapter_2/</guid>
-      <description>pre  code.sourceCode { white-space: pre; position: relative; } pre  code.sourceCode  span { display: inline-block; line-height: 1.25; } pre  code.sourceCode  span:empty { height: 1.2em; } code.sourceCode  span { color: inherit; text-decoration: inherit; } div.sourceCode { margin: 1em 0; } pre.sourceCode { margin: 0; } @media screen { div.sourceCode { overflow: auto; } } @media print { pre  code.sourceCode { white-space: pre-wrap; } pre  code.</description>
-    </item>
-    
-    <item>
-      <title>Thinking_structure</title>
-      <link>https://stevechenzy.github.io/insights/thinking_structure/</link>
-      <pubDate>Mon, 17 Feb 2020 06:57:47 +0800</pubDate>
-      
-      <guid>https://stevechenzy.github.io/insights/thinking_structure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Digital_leadership</title>
-      <link>https://stevechenzy.github.io/digital/digital_leadership/</link>
-      <pubDate>Mon, 17 Feb 2020 06:55:04 +0800</pubDate>
-      
-      <guid>https://stevechenzy.github.io/digital/digital_leadership/</guid>
-      <description></description>
+      <description>pre  code.sourceCode { white-space: pre; position: relative; } pre  code.</description>
     </item>
     
     <item>
@@ -76,34 +66,53 @@ note：WeChat scanner could block the external link. please use other QR-scanner
       <pubDate>Mon, 17 Feb 2020 06:51:13 +0800</pubDate>
       
       <guid>https://stevechenzy.github.io/r/hugo/setup_process/</guid>
-      <description></description>
+      <description>如何用gohugo建设一个静态网站</description>
     </item>
     
     <item>
       <title>R Code highlight</title>
-      <link>https://stevechenzy.github.io/r/ggplot2/r_highlight/</link>
+      <link>https://stevechenzy.github.io/r/r_highlight/</link>
       <pubDate>Sun, 16 Feb 2020 21:03:12 +0800</pubDate>
       
-      <guid>https://stevechenzy.github.io/r/ggplot2/r_highlight/</guid>
+      <guid>https://stevechenzy.github.io/r/r_highlight/</guid>
       <description>这只是一个测试R的代码渲染的页面
-1 2 3  library(&amp;#34;ggplot2&amp;#34;) ggplot(mpg, aes(cty, hwy, color=class)) + geom_point()   </description>
+library(&amp;#34;ggplot2&amp;#34;) ggplot(mpg, aes(cty, hwy, color=class)) + geom_point() </description>
     </item>
     
     <item>
       <title>专心倒计时 Pomodoro</title>
       <link>https://stevechenzy.github.io/apps/pomodoro_introduction_cn/</link>
-      <pubDate>Sat, 15 Feb 2020 10:21:41 +0800</pubDate>
+      <pubDate>Wed, 05 Feb 2020 10:21:41 +0800</pubDate>
       
       <guid>https://stevechenzy.github.io/apps/pomodoro_introduction_cn/</guid>
       <description>English Version
-&amp;ldquo;专心倒计时“（Pomodoro）是一个简单的安卓（Android）设备上可以安装使用的App
- 下载安装 下载github上最新版 APK 文件 或者用手机扫描二维码下载（微信的扫一扫可能会屏蔽，使用手机上其它的二维码扫描软件）:
- 开发的缘由  市场上的番茄钟应用都太炫、充斥了广告和推广信息，甚至申请各种不必要的权限，完全是与专心致志的目标背道而驰。
-求人不如求己，自己开发一个吧！
-&amp;ldquo;前软件工程师&amp;quot;开发的第一个安卓手机应用，极简单、极干净、不要额外的权限，不要广告。满足自己看书、工作甚至培训上课的需要。
-使用方法：  启动/暂停：双击 屏幕, 长按 暂停。 停止/取消：水平从左边缘划到右边缘 切换预设时间（45,30, 25, 15, 10, 7, 5, 3, 1分钟）：在定时器不处于运行或暂停的状态时，水平滑过屏幕 自由调整时间：缩放（2指），滚动（1指，垂直方向）  如果倒计时时间很长，手机会锁屏或休眠，需要允许&amp;rdquo;唤醒&amp;ldquo;的权限，和打开这个app的&amp;rdquo;锁屏通知&amp;ldquo;开关。
-下载使用指南的视频
- 培训教室场景： </description>
+  &amp;ldquo;专心倒计时“（Pomodoro）是一个简单的安卓（Android）设备上可以安装使用的App
+下载安装 下载github上最新版 Apk
+或者用手机扫描二维码下载（微信的扫一扫可能会屏蔽，使用手机上其它的二维码扫描软件）:
+  开发的缘由  市场上的番茄钟应用都太炫、充斥了广告和推广信息，甚至申请各种不必要的权限，完全是与专心致志的目标背道而驰。</description>
+    </item>
+    
+    <item>
+      <title>Pomodoro, an Android App </title>
+      <link>https://stevechenzy.github.io/apps/pomodoro_introduction/</link>
+      <pubDate>Wed, 05 Feb 2020 10:21:34 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/apps/pomodoro_introduction/</guid>
+      <description>中文说明
+  Download Download Latest Apk for your phone</description>
+    </item>
+    
+    <item>
+      <title>北河沿</title>
+      <link>https://stevechenzy.github.io/author/%E5%8C%97%E6%B2%B3%E6%B2%BF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stevechenzy.github.io/author/%E5%8C%97%E6%B2%B3%E6%B2%BF/</guid>
+      <description>栏目的发起人。
+东华门以北是北河沿，以南是南河沿。河，指的是筒子河。
+这是最能体现北京性格的地方，春天的玉兰、迎春、银杏，和别处是全不一样的姿态，因为金瓦红墙，紫禁城的方正威严，也因为胡同、四合院的懒散、随意。
+天蓝的时候，适合发呆，和自己的影子聊上一个下午。
+有时候，写点文字，也写写字，也会写写代码。也随性。</description>
     </item>
     
   </channel>

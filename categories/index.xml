@@ -5,11 +5,38 @@
     <link>https://stevechenzy.github.io/categories/</link>
     <description>Recent content in Categories on 北河沿</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>cn-zh</language>
-    <lastBuildDate>Mon, 17 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 22 Feb 2020 21:54:54 +0800</lastBuildDate>
     
 	<atom:link href="https://stevechenzy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>hugo</title>
+      <link>https://stevechenzy.github.io/categories/hugo/</link>
+      <pubDate>Sat, 22 Feb 2020 21:54:54 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggplot2</title>
+      <link>https://stevechenzy.github.io/categories/ggplot2/</link>
+      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://stevechenzy.github.io/categories/ggplot2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggplot3</title>
+      <link>https://stevechenzy.github.io/categories/ggplot3/</link>
+      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://stevechenzy.github.io/categories/ggplot3/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>R</title>
@@ -21,20 +48,20 @@
     </item>
     
     <item>
-      <title>Application</title>
-      <link>https://stevechenzy.github.io/categories/application/</link>
-      <pubDate>Sat, 15 Feb 2020 10:21:41 +0800</pubDate>
+      <title>tools</title>
+      <link>https://stevechenzy.github.io/categories/tools/</link>
+      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://stevechenzy.github.io/categories/application/</guid>
+      <guid>https://stevechenzy.github.io/categories/tools/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>代码</title>
-      <link>https://stevechenzy.github.io/categories/%E4%BB%A3%E7%A0%81/</link>
-      <pubDate>Sat, 15 Feb 2020 10:21:34 +0800</pubDate>
+      <title>Apps</title>
+      <link>https://stevechenzy.github.io/categories/apps/</link>
+      <pubDate>Wed, 05 Feb 2020 10:21:41 +0800</pubDate>
       
-      <guid>https://stevechenzy.github.io/categories/%E4%BB%A3%E7%A0%81/</guid>
+      <guid>https://stevechenzy.github.io/categories/apps/</guid>
       <description></description>
     </item>
     

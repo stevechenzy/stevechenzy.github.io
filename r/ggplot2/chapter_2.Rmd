@@ -5,7 +5,9 @@ date: '2020-02-17'
 slug: chapter_2
 categories:
   - R
+  - ggplot2
 tags: []
+type : "post" 
 output:
   blogdown::html_page:
     highlight: tango

@@ -6,6 +6,7 @@ slug: chapt_0
 categories:
   - R
 tags: []
+type: "post"
 output:
   blogdown::html_page:
     highlight: tango

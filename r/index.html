@@ -1,109 +1,187 @@
-<!doctype html>
-<html lang="en">
-<head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Hugo 0.64.1" />
-<link rel="apple-touch-icon" sizes="180x180" href='https://stevechenzy.github.io/favicons/zy.png'>
-<link rel="icon" type="image/png" sizes="32x32" href='https://stevechenzy.github.io/favicons/zy.png'>
-<link rel="icon" type="image/png" sizes="16x16" href='https://stevechenzy.github.io/favicons/zy.png'>
-<link rel="manifest" href='https://stevechenzy.github.io/favicons/site.webmanifest'>
-<link rel="mask-icon" href='https://stevechenzy.github.io/favicons/safari-pinned-tab.svg'  color="#004750">
-<link rel="shortcut icon" href='https://stevechenzy.github.io/favicons/zy.png'>
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-config" content='https://stevechenzy.github.io/favicons/browserconfig.xml'>
-<meta name="theme-color" content="#ffffff">
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+  <meta charset="utf-8">
+  <title>R 语言学习</title>
 
-<title>R 语言学习 | 北河沿</title><meta property="og:title" content="R 语言学习" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://stevechenzy.github.io/r/" />
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description"
+    content="This is meta description">
+  
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Hugo 0.64.1" />
 
-<meta itemprop="name" content="R 语言学习">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="R 语言学习"/>
-<meta name="twitter:description" content=""/>
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/plugins/themify-icons/themify-icons.css ">
+  
 
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/scss/style.min.css" media="screen">
 
-<link rel = 'stylesheet' href = 'https://stevechenzy.github.io/css/styles.11946d1f52a2bacb62141400d85c38e614dc862e1c6e9decfc6914c60d3a381462a03679610876ad6a868444aad1d65b9f6c857a5da08c5e461e57c2f6e6e42e.css' integrity = 'sha512-EZRtH1KiustiFBQA2Fw45hTchi4cbp3s/GkUxg06OBRioDZ5YQh2rWqGhESq0dZbn2yFel2gjF5GHlfC9ubkLg=='>
-<link rel="stylesheet" href="https://stevechenzy.github.io/css/syntax.css">
-</head>
-<body class="page-section">
-  <header class="nav_header"><nav class="wrap nav">
-	<a href="https://stevechenzy.github.io/"><img src='https://stevechenzy.github.io/favicons/bhy2.png' >
-	</a><div class="search">
-  <label for="search" class="search_label"></label>
-  <input type="search" class="search_field" placeholder="查找 ..." id="search">
-  <div class="search_results"></div>
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://stevechenzy.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://stevechenzy.github.io/images/favicon.png " type="image/x-icon">
+
+  
+  
+  
+
+</head><body>
+    
+<!-- preloader start -->
+<div class="preloader">
+  
 </div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="fixed-top navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand"href="https://stevechenzy.github.io/"><img class="img-fluid" src="https://stevechenzy.github.io/images/beiheyan.svg" alt="北河沿"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
 
-
-	<ul class="nav_body">
-		<li class="nav-item">
-			<a class="nav-link" href="https://stevechenzy.github.io/apps/"><span>Apps</span></a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="https://stevechenzy.github.io/r/"><span>R学习</span></a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="https://stevechenzy.github.io/calligraphy/"><span>写字</span></a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="https://stevechenzy.github.io/digital/"><span>数字化</span></a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="https://stevechenzy.github.io/insights/"><span>随思</span></a>
-		</li>
-		
-		<li class="nav-item">
-			<a class="nav-link" href="" target="_blank"></a>
-		</li>
-	</ul>
-</nav>
-
-  </header>
-  <main class="main wrap pt-4"><div class="grid-auto">
-  <div><aside class="aside">
-  <section class="section">
-    <h2 class="section_title active"><a  href="https://stevechenzy.github.io/r/" class="group">R 语言学习</a></h2>
-      <section class="" id="docs-r-语言学习">
-  <section class="section">
-    <h2 class="section_title"><a  href="https://stevechenzy.github.io/r/ggplot2/" class="group">ggplot2 练习作业</a></h2>
-      <section class="" id="docs-ggplot2-练习作业">
-        <h3 class="section_link"><a id="docs-第一章练习" href="https://stevechenzy.github.io/r/ggplot2/chapt_0/">第一章练习</a></h3>
-        <h3 class="section_link"><a id="docs-第二章作业" href="https://stevechenzy.github.io/r/ggplot2/chapter_2/">第二章作业</a></h3>
-        <h3 class="section_link"><a id="docs-r-code-highlight" href="https://stevechenzy.github.io/r/ggplot2/r_highlight/">R Code highlight</a></h3><nav id="TableOfContents"></nav>
-      </section>
-  </section>
-  <section class="section">
-    <h2 class="section_title"><a  href="https://stevechenzy.github.io/r/hugo/" class="group">hugo建站</a></h2>
-      <section class="" id="docs-hugo建站">
-        <h3 class="section_link"><a id="docs-setup_process" href="https://stevechenzy.github.io/r/hugo/setup_process/">Setup_process</a></h3><nav id="TableOfContents"></nav>
-      </section>
-  </section>
-      </section>
-  </section>
-</aside>
-
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://stevechenzy.github.io/"> 首页 </a>
+          </li>
+          
+          
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://stevechenzy.github.io/r">R 语言笔记</a>
+            </li>
+            
+          
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://stevechenzy.github.io/apps">Apps</a>
+            </li>
+            
+          
+        </ul>
+        
+        <!-- search -->
+        <div class="search">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://stevechenzy.github.io//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="输入搜索关键词 & 回车...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+      </div>
+    </nav>
   </div>
-  <div class="content"><p>本来不应该再开始学一门新的编程语言了。2020年的春节是一个特殊的时期，有了一些可以支配的时间，于是就借机入门。</p>
-<p>R语言是统计学的专业语言，现在数据分析、机器学习都有用。我研究数字领导力，也稍微深入的了解一下。</p>
-<p>进坑之后，时间哗哗的流逝，远超预期。主要是因为统计学的基础太差。所以老老实实的做写基本的功课。</p>
-<p>在R的世界有优美的地方，是可以很方便的分享作业。就在这里，保存一些学习的笔记，也许有人有用。</p>
+</header>
+<!-- /navigation --> <div class="py-5 d-none d-lg-block"></div> 
 
-    <div class="pager">
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto px-0">
+        <h2 class="mb-4">在分类 <span class="text-primary">R 语言学习</span> 中的文章</h2>
+        <div class="bg-white shadow block">
+          
+          
+          <article class="mb-5">
+  <h2 class="h4"><a class="post-title" href="https://stevechenzy.github.io/r/ggplot2/">ggplot2 练习作业</a></h2>
+  <div class="mb-3 post-meta">
+    <a href="/author/%e5%8c%97%e6%b2%b3%e6%b2%bf">北河沿</a>,
+    0001-01-01, 
+    <a href="/categories/r">R</a>
+    
+    <a href="/categories/ggplot2">Ggplot2</a>
+    
+  </div>
+  <p>R语言中最令人喜欢和有用的就是ggplot2这个做统计图表的神器了，Hardley Wickham 也因此而成为R世界的大神。
+Hardley写了一本书来介绍整个ggplot2软件包的使用原理和设计思路，而且电子版是开源的，使用了基于RMarkdown标记语言的包blogdown写作，展示了一个系统、优美的R世界。
+可以在线看最新的版本《ggplot2: Elegant Graphics for Data Analysis》</p>
+  <a href="https://stevechenzy.github.io/r/ggplot2/" class="btn btn-sm btn-transparent pl-0">read more</a>
+</article>
+          
+          <article class="mb-5">
+  <h2 class="h4"><a class="post-title" href="https://stevechenzy.github.io/r/r_highlight/">R Code highlight</a></h2>
+  <div class="mb-3 post-meta">
+    <a href="/author/%e5%8c%97%e6%b2%b3%e6%b2%bf">北河沿</a>,
+    2020-02-16, 
+    <a href="/categories/r">R</a>
+    
+  </div>
+  <p>这只是一个测试R的代码渲染的页面
+library(&#34;ggplot2&#34;) ggplot(mpg, aes(cty, hwy, color=class)) + geom_point() </p>
+  <a href="https://stevechenzy.github.io/r/r_highlight/" class="btn btn-sm btn-transparent pl-0">read more</a>
+</article>
+          
+          
+          <div class="mt-5">
+            <!-- pagination -->
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- /pagination -->
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+
+<footer class="py-4 bg-light border-top">
+  <div class="container">
+    <div class="text-center mt-4">
+      <span>© 北河沿 北京 2020 ---> inspired by Hugo Theme Northenlab</span>
     </div>
   </div>
-</div>
-<footer class="mt-2 pt-2 pb-2">
-  <div class="wrap">
-    <p>&copy; 2020 北河沿</p>
-  </div>
+ 
+
 </footer>
 
-<script src = 'https://stevechenzy.github.io/js/bundle.min.27fd38646b15ed255ef61caf3060adf4bea0d904abe81d94da7c47e2002342fa018d654800a9baed21b8c3e63eacfeee6db51dd90e94be03bc64565d4d6763af.js'></script>
 
-  </main>
- 
-  
- 
+
+
+<script>
+  var indexURL = "https://stevechenzy.github.io/index.json"
+</script>
+
+
+<!-- JS Plugins -->
+
+<script src="https://stevechenzy.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/search/mark.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/search/search.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://stevechenzy.github.io/js/script.min.js"></script>
+
+<!-- google analitycs -->
 </body>
+
 </html>
