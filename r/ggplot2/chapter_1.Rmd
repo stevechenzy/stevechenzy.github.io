@@ -5,7 +5,8 @@ date: '2020-02-17'
 slug: chapt_1
 categories:
   - R
-  - ggplot2
+  - ggplot2 
+tags: []
 type: "post"
 summary : "第一章的内容比较简单，关于如何安装ggplot的。有三条命令: \n\n安装、环境信息、宽度信息"
 output:

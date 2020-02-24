@@ -30,12 +30,12 @@
     </item>
     
     <item>
-      <title>R的代码渲染</title>
+      <title>代码的语法渲染</title>
       <link>https://stevechenzy.github.io/r/r/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://stevechenzy.github.io/r/r/</guid>
-      <description>有些什么R的代码可以用做渲染的 a &amp;lt;- c(1, 2, 3, 4) print(a)</description>
+      <description>测试各种编程语言的代码渲染效果是否满意。</description>
     </item>
     
     <item>
