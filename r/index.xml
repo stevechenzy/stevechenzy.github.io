@@ -14,19 +14,10 @@
     <item>
       <title>ggplot2 练习作业</title>
       <link>https://stevechenzy.github.io/r/ggplot2/ggplot2_exercises/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://stevechenzy.github.io/r/ggplot2/ggplot2_exercises/</guid>
       <description>R语言中最令人喜欢和有用的就是ggplot2这个做统计图表的神器了，认真地把这本书的作业都做了一下。</description>
-    </item>
-    
-    <item>
-      <title>hugo建站</title>
-      <link>https://stevechenzy.github.io/r/hugo/_index-/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://stevechenzy.github.io/r/hugo/_index-/</guid>
-      <description>如何搭建这个网站的过程</description>
     </item>
     
     <item>
@@ -36,15 +27,6 @@
       
       <guid>https://stevechenzy.github.io/r/r/</guid>
       <description>测试各种编程语言的代码渲染效果是否满意。</description>
-    </item>
-    
-    <item>
-      <title>Hugo 模版 Northendlab</title>
-      <link>https://stevechenzy.github.io/r/hugo/theme_northendlab/</link>
-      <pubDate>Sat, 22 Feb 2020 21:54:54 +0800</pubDate>
-      
-      <guid>https://stevechenzy.github.io/r/hugo/theme_northendlab/</guid>
-      <description>这个模版的特点，如何对它进行改造的。</description>
     </item>
     
     <item>
@@ -65,15 +47,6 @@
       
       <guid>https://stevechenzy.github.io/r/ggplot2/chapter_2/</guid>
       <description>加载ggplot2到工作环境，制作最简单的三点图。</description>
-    </item>
-    
-    <item>
-      <title>使用Hugo建本站的过程</title>
-      <link>https://stevechenzy.github.io/r/hugo/setup_process/</link>
-      <pubDate>Mon, 17 Feb 2020 06:51:13 +0800</pubDate>
-      
-      <guid>https://stevechenzy.github.io/r/hugo/setup_process/</guid>
-      <description>如何用gohugo建设一个静态网站，hugo 提出了一种新的建站理念：静态网站&amp;ndash;简单、安全、快捷。非常适合与文字写作的网站。</description>
     </item>
     
   </channel>
