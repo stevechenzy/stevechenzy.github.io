@@ -6,7 +6,7 @@
     <description>Recent content on 北河沿</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 24 Feb 2020 12:20:30 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Feb 2020 22:34:09 +0800</lastBuildDate>
     
 	<atom:link href="https://stevechenzy.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -39,6 +39,33 @@
     </item>
     
     <item>
+      <title>Chapter_5</title>
+      <link>https://stevechenzy.github.io/r/ggplot2/chapter_5/</link>
+      <pubDate>Mon, 24 Feb 2020 22:34:09 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/ggplot2/chapter_5/</guid>
+      <description>Insert Lead paragraph here. New Cool Posts</description>
+    </item>
+    
+    <item>
+      <title>Chapter_4</title>
+      <link>https://stevechenzy.github.io/r/ggplot2/chapter_4/</link>
+      <pubDate>Mon, 24 Feb 2020 22:33:25 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/ggplot2/chapter_4/</guid>
+      <description>Insert Lead paragraph here. New Cool Posts</description>
+    </item>
+    
+    <item>
+      <title>Chapter_3</title>
+      <link>https://stevechenzy.github.io/r/ggplot2/chapter_3/</link>
+      <pubDate>Mon, 24 Feb 2020 22:31:44 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/ggplot2/chapter_3/</guid>
+      <description>Insert Lead paragraph here. New Cool Posts</description>
+    </item>
+    
+    <item>
       <title>What_is_archetype</title>
       <link>https://stevechenzy.github.io/web/hugo/what_is_archetype/</link>
       <pubDate>Mon, 24 Feb 2020 12:20:30 +0800</pubDate>
@@ -48,11 +75,20 @@
     </item>
     
     <item>
-      <title>Xk_tools</title>
+      <title>写小楷的工具</title>
       <link>https://stevechenzy.github.io/calligraphy/xk_tools/</link>
       <pubDate>Mon, 24 Feb 2020 12:02:45 +0800</pubDate>
       
       <guid>https://stevechenzy.github.io/calligraphy/xk_tools/</guid>
+      <description>有了张哲老师的入门课，又承蒙“掌柜书童”赵老师的悉心指导，准备了一些写字的工具，</description>
+    </item>
+    
+    <item>
+      <title>第三章练习</title>
+      <link>https://stevechenzy.github.io/r/ggplot2/2020-02-24-/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/ggplot2/2020-02-24-/</guid>
       <description>Insert Lead paragraph here. New Cool Posts</description>
     </item>
     
