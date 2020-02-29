@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn"><head>
   <meta charset="utf-8">
-  <title>Chapter_4</title>
+  <title>第四章：Individual geoms</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -69,7 +69,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto block shadow 0">
-        <h4>Chapter_4</h4>
+        <h4>第四章：Individual geoms</h4>
         <div class="mb-3 post-meta">
           <a href="https://stevechenzy.github.io/author/%e5%8c%97%e6%b2%b3%e6%b2%bf">北河沿</a>,
           2020-02-24, 
@@ -83,9 +83,161 @@
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p><strong>Insert Lead paragraph here.</strong></p>
-<div id="new-cool-posts" class="section level2">
-<h2>New Cool Posts</h2>
+<div id="这一章节的代码举例" class="section level3">
+<h3>这一章节的代码举例：</h3>
+<pre class="r"><code>library(ggplot2)
+df &lt;- data.frame(
+  x = c(3, 1, 5), 
+  y = c(2, 4, 6), 
+  label = c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)
+)
+p &lt;- ggplot(df, aes(x, y, label = label)) + 
+  labs(x = NULL, y = NULL) + # Hide axis label
+  theme(plot.title = element_text(size = 12)) # Shrink plot title</code></pre>
+<pre class="r"><code>p + geom_point() + ggtitle(&quot;point&quot;)</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>p + geom_text() + ggtitle(&quot;text&quot;)</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>p + geom_bar(stat = &quot;identity&quot;) + ggtitle(&quot;bar&quot;)</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>p + geom_tile() + ggtitle(&quot;raster&quot;)</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>p + geom_line() + ggtitle(&quot;line&quot;)</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>p + geom_area() + ggtitle(&quot;area&quot;)</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>p + geom_path() + ggtitle(&quot;path&quot;)</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>p + geom_polygon() + ggtitle(&quot;polygon&quot;)</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="exercises" class="section level3">
+<h3>4.1.1 Exercises</h3>
+<ol style="list-style-type: decimal">
+<li>What geoms would you use to draw each of the following named plots?</li>
+</ol>
+<p>Scatterplot</p>
+<p>Line chart</p>
+<p>Histogram</p>
+<p>Bar chart</p>
+<p>Pie chart</p>
+<div id="我的回答" class="section level5">
+<h5>我的回答</h5>
+<p>Scatterplot –&gt; geom_point()</p>
+<p>Line chart –&gt; geom_line()</p>
+<p>Histogram –&gt;geom_histogram()</p>
+<p>Bar chart –&gt; geom_bar(stat = “identity”)</p>
+<p>Pie chart –&gt; geom_bar() + coord_polar</p>
+</div>
+<div id="pie的例子" class="section level5">
+<h5>Pie的例子</h5>
+<div id="第一步" class="section level6">
+<h6>第一步</h6>
+<pre class="r"><code># Load ggplot2
+# library(ggplot2)
+
+# Create Data
+data &lt;- data.frame(
+  group=LETTERS[1:5],
+  value=c(13,7,9,21,2)
+)
+
+# Basic piechart
+ggplot(data, aes(x=&quot;&quot;, y=value, fill=group)) +
+  geom_bar(stat=&quot;identity&quot;, width=1) +
+  coord_polar(&quot;y&quot;, start=0)</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="改进外观" class="section level6">
+<h6>改进外观</h6>
+<ul>
+<li>删除数字标签</li>
+<li>删除格子和背景</li>
+</ul>
+<pre class="r"><code># Load ggplot2
+# library(ggplot2)
+
+# Create Data
+data &lt;- data.frame(
+  group=LETTERS[1:5],
+  value=c(13,7,9,21,2)
+)
+
+# Basic piechart
+ggplot(data, aes(x=&quot;&quot;, y=value, fill=group)) +
+  geom_bar(stat=&quot;identity&quot;, width=1, color=&quot;white&quot;) +
+  coord_polar(&quot;y&quot;, start=0) +
+  
+  theme_void() # remove background, grid, numeric labels</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+</div>
+<div id="添加标签" class="section level4">
+<h4>添加标签</h4>
+<pre class="r"><code># Load ggplot2
+library(ggplot2)
+library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code># Create Data
+data &lt;- data.frame(
+  group=LETTERS[1:5],
+  value=c(13,7,9,21,2)
+)
+
+# Compute the position of labels
+data &lt;- data %&gt;% 
+  arrange(desc(group)) %&gt;%
+  mutate(prop = value / sum(data$value) *100) %&gt;%
+  mutate(ypos = cumsum(prop)- 0.5*prop )
+
+# Basic piechart
+ggplot(data, aes(x=&quot;&quot;, y=prop, fill=group)) +
+  geom_bar(stat=&quot;identity&quot;, width=1, color=&quot;white&quot;) +
+  coord_polar(&quot;y&quot;, start=0) +
+  theme_void() + 
+  theme(legend.position=&quot;none&quot;) +
+  
+  geom_text(aes(y = ypos, label = group), color = &quot;white&quot;, size=6) +
+  scale_fill_brewer(palette=&quot;Set1&quot;)</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>What’s the difference between geom_path() and geom_polygon()? What’s the difference between geom_path() and geom_line()?</li>
+</ol>
+<div id="我的回答-1" class="section level5">
+<h5>我的回答：</h5>
+<ul>
+<li>geom_polygon() 是在geom_path()之上填充内部。</li>
+<li>geom_path()是按点在数据集中的顺序来连接的，geom_line()则是从左到右连接所有的点。</li>
+</ul>
+<pre class="r"><code>p + geom_line() + ggtitle(&quot;line&quot;)</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<pre class="r"><code>p + geom_path() + ggtitle(&quot;path&quot;)</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<pre class="r"><code>p + geom_polygon() + ggtitle(&quot;ploygon&quot;)</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>What low-level geoms are used to draw geom_smooth()? What about geom_boxplot() and geom_violin()?</li>
+</ol>
+</div>
+<div id="我的回答-2" class="section level5">
+<h5>我的回答：</h5>
+<ul>
+<li>geom_smooth()是用了函数生成了一系列的点，用geom_line(),或geom_path()在做图 参加2.6.1的内容</li>
+</ul>
+<pre class="r"><code>ggplot(mpg, aes(drv, hwy)) + geom_boxplot()</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-16-1.png" width="672" />
+- geom_boxplot(), geom_violine()从图形上看，也是geom_path()的运用，数据的计算方式不同。</p>
+<pre class="r"><code>ggplot(mpg, aes(drv, hwy)) + geom_violin()</code></pre>
+<p><img src="/r/ggplot2/chapter_4_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+</div>
+</div>
 </div>
 
         </div>

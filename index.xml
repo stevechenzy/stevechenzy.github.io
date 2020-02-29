@@ -48,21 +48,21 @@
     </item>
     
     <item>
-      <title>Chapter_4</title>
+      <title>第四章：Individual geoms</title>
       <link>https://stevechenzy.github.io/r/ggplot2/chapter_4/</link>
       <pubDate>Mon, 24 Feb 2020 22:33:25 +0800</pubDate>
       
       <guid>https://stevechenzy.github.io/r/ggplot2/chapter_4/</guid>
-      <description>Insert Lead paragraph here. New Cool Posts</description>
+      <description>这一章节的代码举例： library(ggplot2) df &amp;lt;- data.frame( x = c(3, 1, 5), y = c(2, 4, 6), label = c(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;) ) p &amp;lt;- ggplot(df, aes(x, y, label = label)) + labs(x = NULL,</description>
     </item>
     
     <item>
-      <title>Chapter_3</title>
+      <title>第三章没有作业</title>
       <link>https://stevechenzy.github.io/r/ggplot2/chapter_3/</link>
       <pubDate>Mon, 24 Feb 2020 22:31:44 +0800</pubDate>
       
       <guid>https://stevechenzy.github.io/r/ggplot2/chapter_3/</guid>
-      <description>Insert Lead paragraph here. New Cool Posts</description>
+      <description>3 Frequently asked questions</description>
     </item>
     
     <item>

@@ -1,5 +1,5 @@
 ---
-title: "Chapter_4"
+title: "第四章：Individual geoms"
 date: 2020-02-24T22:33:25+08:00
 draft: true
 author: "北河沿"
@@ -11,7 +11,183 @@ description: ""
 # summary: ""
 ---
 
-**Insert Lead paragraph here.**
+### 这一章节的代码举例：
 
-## New Cool Posts
+```{r}
+library(ggplot2)
+df <- data.frame(
+  x = c(3, 1, 5), 
+  y = c(2, 4, 6), 
+  label = c("a","b","c")
+)
+p <- ggplot(df, aes(x, y, label = label)) + 
+  labs(x = NULL, y = NULL) + # Hide axis label
+  theme(plot.title = element_text(size = 12)) # Shrink plot title
+```
+
+```{r}
+p + geom_point() + ggtitle("point")
+```
+
+```{r}
+p + geom_text() + ggtitle("text")
+```
+
+```{r}
+p + geom_bar(stat = "identity") + ggtitle("bar")
+```
+
+```{r}
+p + geom_tile() + ggtitle("raster")
+```
+
+```{r}
+p + geom_line() + ggtitle("line")
+```
+
+```{r}
+
+p + geom_area() + ggtitle("area")
+```
+
+```{r}
+p + geom_path() + ggtitle("path")
+```
+
+```{r}
+p + geom_polygon() + ggtitle("polygon")
+```
+
+### 4.1.1 Exercises
+
+1. What geoms would you use to draw each of the following named plots?
+
+Scatterplot
+
+Line chart
+
+Histogram
+
+Bar chart
+
+Pie chart
+
+
+##### 我的回答
+
+Scatterplot  --> geom_point()
+
+Line chart   --> geom_line()
+
+Histogram   -->geom_histogram()
+
+Bar chart   --> geom_bar(stat = "identity")
+
+Pie chart   --> geom_bar() + coord_polar
+
+##### Pie的例子
+
+###### 第一步
+```{r}
+# Load ggplot2
+# library(ggplot2)
+
+# Create Data
+data <- data.frame(
+  group=LETTERS[1:5],
+  value=c(13,7,9,21,2)
+)
+
+# Basic piechart
+ggplot(data, aes(x="", y=value, fill=group)) +
+  geom_bar(stat="identity", width=1) +
+  coord_polar("y", start=0)
+```
+
+###### 改进外观
+
+- 删除数字标签
+- 删除格子和背景
+
+```{r}
+# Load ggplot2
+# library(ggplot2)
+
+# Create Data
+data <- data.frame(
+  group=LETTERS[1:5],
+  value=c(13,7,9,21,2)
+)
+
+# Basic piechart
+ggplot(data, aes(x="", y=value, fill=group)) +
+  geom_bar(stat="identity", width=1, color="white") +
+  coord_polar("y", start=0) +
+  
+  theme_void() # remove background, grid, numeric labels
+```
+
+
+#### 添加标签
+```{r}
+# Load ggplot2
+library(ggplot2)
+library(dplyr)
+
+# Create Data
+data <- data.frame(
+  group=LETTERS[1:5],
+  value=c(13,7,9,21,2)
+)
+
+# Compute the position of labels
+data <- data %>% 
+  arrange(desc(group)) %>%
+  mutate(prop = value / sum(data$value) *100) %>%
+  mutate(ypos = cumsum(prop)- 0.5*prop )
+
+# Basic piechart
+ggplot(data, aes(x="", y=prop, fill=group)) +
+  geom_bar(stat="identity", width=1, color="white") +
+  coord_polar("y", start=0) +
+  theme_void() + 
+  theme(legend.position="none") +
+  
+  geom_text(aes(y = ypos, label = group), color = "white", size=6) +
+  scale_fill_brewer(palette="Set1")
+```
+
+
+2. What’s the difference between geom_path() and geom_polygon()? What’s the difference between geom_path() and geom_line()?
+
+##### 我的回答：
+- geom_polygon() 是在geom_path()之上填充内部。
+- geom_path()是按点在数据集中的顺序来连接的，geom_line()则是从左到右连接所有的点。
+```{r}
+p + geom_line() + ggtitle("line")
+```
+```{r}
+p + geom_path() + ggtitle("path")
+```
+```{r}
+p + geom_polygon() + ggtitle("ploygon")
+```
+
+3. What low-level geoms are used to draw geom_smooth()? What about geom_boxplot() and geom_violin()?
+
+##### 我的回答：
+- geom_smooth()是用了函数生成了一系列的点，用geom_line(),或geom_path()在做图 参加2.6.1的内容
+```{r}
+ggplot(mpg, aes(drv, hwy)) + geom_boxplot()
+```
+- geom_boxplot(), geom_violine()从图形上看，也是geom_path()的运用，数据的计算方式不同。
+```{r}
+ggplot(mpg, aes(drv, hwy)) + geom_violin()
+```
+
+
+
+
+
+
 
