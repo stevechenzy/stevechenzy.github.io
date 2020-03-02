@@ -1,0 +1,347 @@
+---
+title: "第五章 Collective Geom"
+date: '2020-03-02'
+draft: true
+author: "北河沿"
+type: "post"
+categories: 
+ - R
+ - ggplot2
+ 
+ 
+description: ""
+# summary: ""
+---
+
+## 原理
+
+第四章的单个图表（Individual Geom），是对一个观察（observation，也就是一行数据）画的图形。
+
+集合图表（Collective Geom)，对应的数据是多行的。类似与Power BI的汇聚，或者measure（度量值）。
+
+数据的提供，使用了“组映射”（group aesthetic）的方式。连续变量也是需要分段才能够正确的映射。
+
+
+### 数据准备
+
+```{r}
+data(Oxboys, package = "nlme")
+head(Oxboys)
+```
+
+理解数据才能更好的作图：
+```
+Heights of Boys in Oxford
+Description
+The Oxboys data frame has 234 rows and 4 columns.
+
+Format
+This data frame contains the following columns:
+
+Subject 
+an ordered factor giving a unique identifier for each boy in the experiment
+
+age
+a numeric vector giving the standardized age (dimensionless)
+
+height
+a numeric vector giving the height of the boy (cm)
+
+Occasion
+an ordered factor - the result of converting age from a continuous variable to a count so these slightly unbalanced data can be analyzed as balanced.
+
+Details
+These data are described in Goldstein (1987) as data on the height of a selection of boys from Oxford, England versus a standardized age.
+
+Source
+Pinheiro, J. C. and Bates, D. M. (2000), Mixed-Effects Models in S and S-PLUS, Springer, New York. (Appendix A.19)
+
+```
+
+### 多组，公用一个数据映射
+
+```{r}
+library(ggplot2)
+ggplot(Oxboys, aes(age, height, group = Subject)) + 
+  geom_point() + 
+  geom_line()
+```
+
+### 如果分组指定的不正确,下面是没有给出分组，默认参数
+
+```{r}
+ggplot(Oxboys, aes(age, height)) + 
+  geom_point() + 
+  geom_line()
+```
+
+
+### 不同的组，放在不同的图层
+
+回归的线，放在另一个图层里。
+
+```{r}
+ggplot(Oxboys, aes(age, height, group = Subject)) + 
+  geom_line() + 
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+
+
+### 在不同的图层设定了不同的数据映射（aes）
+
+ggplot中的数据映射（aes）是所有图层缺省使用的映射，如果本图层指定
+
+```{r}
+ggplot(Oxboys, aes(age, height)) + 
+  geom_line(aes(group = Subject)) + 
+  geom_smooth(method = "lm", size = 2, se = FALSE)
+```
+
+
+### 重载分组映射
+
+对孩子的身高分段画箱型图
+
+```{r}
+ggplot(Oxboys, aes(Occasion, height)) + 
+  geom_boxplot()
+```
+
+有了**Occsion**这个离散的x值，箱型图是可以了，但是折线图如果用这个映射就不是想要的结果了
+
+```{r}
+ggplot(Oxboys, aes(Occasion, height)) + 
+  geom_boxplot() +
+  geom_line(colour = "#3366FF", alpha = 0.5)
+```
+
+为了得到想要的图，所以要重载（override）映射），想要的是体现某个人（Subject）身高变化的折线。都还在长身体 :)
+
+```{r}
+ggplot(Oxboys, aes(Occasion, height)) + 
+  geom_boxplot() +
+  geom_line(aes(group = Subject), colour = "#3366FF", alpha = 0.5)
+```
+
+
+### 数据对象映射（aes）要和图形对象匹配
+
+ colour = factor(colour),对数据中的Colour做了处理，是个分类的离散量，只有3个不同的值，与1/3/5的数值无关。
+
+```{r}
+df <- data.frame(x = 1:3, y = 1:3, colour = c(1,3,5))
+
+ggplot(df, aes(x, y, colour = factor(colour))) + 
+  geom_line(aes(group = 1), size = 2) +
+  geom_point(size = 5)
+```
+
+未做处理的colour = c(1,3,5)，是数值，是个连续的变量，1～5的值都是有的。
+
+```{r}
+ggplot(df, aes(x, y, colour = colour)) + 
+  geom_line(aes(group = 1), size = 2) +
+  geom_point(size = 5)
+```
+
+
+这个连续的过度并没有很平滑的过渡，要做到这一点,看下面
+
+```{r}
+xgrid <- with(df, seq(min(x), max(x), length = 50))
+interp <- data.frame(
+  x = xgrid,
+  y = approx(df$x, df$y, xout = xgrid)$y,
+  colour = approx(df$x, df$colour, xout = xgrid)$y  
+)
+ggplot(interp, aes(x, y, colour = colour)) + 
+  geom_line(size = 2) +
+  geom_point(data = df, size = 5)
+```
+
+
+#### 堆叠的例子
+
+
+```{r}
+ggplot(mpg, aes(class)) + 
+  geom_bar()
+```
+
+```{r}
+ggplot(mpg, aes(class, fill = drv)) + 
+  geom_bar()
+```
+
+
+#### 连续变量做堆叠是没有意义的
+
+```{r}
+ggplot(mpg, aes(class, fill = hwy)) + 
+  geom_bar()
+```
+
+
+```{r}
+ggplot(mpg, aes(class, fill = hwy, group = hwy)) + 
+  geom_bar()
+```
+
+**需要使用factor来进行离散处理**
+
+## 练习题
+
+1. Draw a boxplot of hwy for each value of cyl, without turning cyl into a factor. What extra aesthetic do you need to set?
+
+```{r}
+ggplot(mpg, aes(cyl, hwy)) +
+  geom_boxplot()
+
+```
+
+找个变量分个组好看点
+
+```{r}
+ggplot(mpg, aes(cyl, hwy, group = class)) +
+  geom_boxplot()
+
+```
+
+```{r}
+head(mpg)
+```
+
+找个别的变量分个组，比如车的排量。有点意义
+
+```{r}
+ggplot(mpg, aes(cyl, hwy, group = displ)) +
+  geom_boxplot()
+
+```
+
+
+
+2. Modify the following plot so that you get one boxplot per integer value of displ.
+
+```{r}
+ggplot(mpg, aes(displ, cty)) + 
+  geom_boxplot()
+```
+
+添加group，factor处理一下连续的变量
+
+```{r}
+ggplot(mpg, aes(displ, cty, group = factor(displ))) + 
+  geom_boxplot()
+```
+
+
+3. When illustrating the difference between mapping continuous and discrete colours to a line, the discrete example needed aes(group = 1). Why? What happens if that is omitted? What’s the difference between aes(group = 1) and aes(group = 2)? Why?
+
+```{r}
+df <- data.frame(x = 1:3, y = 1:3, colour = c(1,3,5))
+ggplot(df, aes(x, y, colour = colour)) + 
+  geom_line(aes(group = 1), size = 2) +
+  geom_point(size = 5)
+```
+
+颜色连续变化，只显示了1～3这一段
+
+
+
+```{r}
+df <- data.frame(x = 1:3, y = 1:3, colour = c(1,3,5))
+ggplot(df, aes(x, y, colour = colour)) + 
+  geom_line(size = 2) +
+  geom_point(size = 5)
+```
+
+去掉group = 1,就画不出线来了。对上面的连续的值没有影响。
+```{r}
+df <- data.frame(x = 1:3, y = 1:3, colour = c(1,3,5))
+
+ggplot(df, aes(x, y, colour = factor(colour))) + 
+  geom_line(size = 2) +
+  geom_point(size = 5)
+```
+
+```{r}
+df <- data.frame(x = 1:3, y = 1:3, colour = c(1,3,5))
+
+ggplot(df, aes(x, y, colour = factor(colour))) + 
+  geom_line(aes(group = 1), size = 2) +
+  geom_point(size = 5)
+```
+
+
+4. How many bars are in each of the following plots?
+
+```{r}
+ggplot(mpg, aes(drv)) + 
+  geom_bar()
+```
+
+```{r}
+ggplot(mpg, aes(drv,color="white")) + 
+  geom_bar()
+```
+
+
+```{r}
+ggplot(mpg, aes(drv, fill = hwy, group = hwy)) + 
+  geom_bar()
+```
+```{r}
+ggplot(mpg, aes(drv, fill = hwy, group = hwy, color="white")) + 
+  geom_bar()
+```
+
+
+
+
+
+```{r}
+library(dplyr)  
+mpg2 <- mpg %>% arrange(hwy) %>% mutate(id = seq_along(hwy)) 
+ggplot(mpg2, aes(drv, fill = hwy, group = id)) + 
+  geom_bar()
+```
+
+
+```{r}
+library(dplyr)  
+mpg2 <- mpg %>% arrange(hwy) %>% mutate(id = seq_along(hwy)) 
+ggplot(mpg2, aes(drv, fill = hwy, group = id, color="white")) + 
+  geom_bar()
+```
+(Hint: try adding an outline around each bar with colour = "white")
+
+5. Install the babynames package. It contains data about the popularity of babynames in the US. Run the following code and fix the resulting graph. Why does this graph make me unhappy?
+
+```{r}
+library(babynames)
+hadley <- dplyr::filter(babynames, name == "Hadley")
+ggplot(hadley, aes(year, n)) + 
+  geom_line()
+```
+
+先看看这个数据的结构
+```{r}
+head(babynames)
+```
+
+每年有男女2个数据，导致图形波动。分开颜色之后发现，是2000年之后女性叫“Hadley”的人数剧增。作者Hadley大约是觉得自己的名字女性化了，有些尴尬？
+
+
+
+```{r}
+hadley <- dplyr::filter(babynames, name == "Hadley")
+ggplot(hadley, aes(year, n)) + 
+  geom_line(aes(color=sex))
+```
+
+
+
+
+

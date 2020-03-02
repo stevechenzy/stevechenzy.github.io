@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+  <meta charset="utf-8">
+  <title>第五章 Collective Geom</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description"
+    content="This is meta description">
+  
+  <meta name="author" content="北河沿">
+  <meta name="generator" content="Hugo 0.64.1" />
+
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/scss/style.min.css" media="screen">
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/css/syntax.css ">
+  
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://stevechenzy.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://stevechenzy.github.io/images/favicon.png " type="image/x-icon">
+
+  
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="fixed-top navigation mx-2">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand"href="https://stevechenzy.github.io/"><img class="img-fluid" src="https://stevechenzy.github.io/images/beiheyan-small.svg" alt="北河沿"></a>
+
+      
+        
+
+    
+
+        <!-- search -->
+        <div class="search">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://stevechenzy.github.io//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="输入搜索关键词 & 回车...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation --> <div class="py-2 d-none d-lg-block"></div> 
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto block shadow 0">
+        <h4>第五章 Collective Geom</h4>
+        <div class="mb-3 post-meta">
+          <a href="https://stevechenzy.github.io/author/%e5%8c%97%e6%b2%b3%e6%b2%bf">北河沿</a>,
+          2020-03-02, 
+          <a href="https://stevechenzy.github.io/categories/r">R</a>
+          
+          <a href="https://stevechenzy.github.io/categories/ggplot2">ggplot2</a>
+          
+
+        </div>
+        
+        <div class="content mb-0">
+          
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="原理" class="section level2">
+<h2>原理</h2>
+<p>第四章的单个图表（Individual Geom），是对一个观察（observation，也就是一行数据）画的图形。</p>
+<p>集合图表（Collective Geom)，对应的数据是多行的。类似与Power BI的汇聚，或者measure（度量值）。</p>
+<p>数据的提供，使用了“组映射”（group aesthetic）的方式。连续变量也是需要分段才能够正确的映射。</p>
+<div id="数据准备" class="section level3">
+<h3>数据准备</h3>
+<pre class="r"><code>data(Oxboys, package = &quot;nlme&quot;)
+head(Oxboys)</code></pre>
+<pre><code>##   Subject     age height Occasion
+## 1       1 -1.0000  140.5        1
+## 2       1 -0.7479  143.4        2
+## 3       1 -0.4630  144.8        3
+## 4       1 -0.1643  147.1        4
+## 5       1 -0.0027  147.7        5
+## 6       1  0.2466  150.2        6</code></pre>
+<p>理解数据才能更好的作图：</p>
+<pre><code>Heights of Boys in Oxford
+Description
+The Oxboys data frame has 234 rows and 4 columns.
+
+Format
+This data frame contains the following columns:
+
+Subject 
+an ordered factor giving a unique identifier for each boy in the experiment
+
+age
+a numeric vector giving the standardized age (dimensionless)
+
+height
+a numeric vector giving the height of the boy (cm)
+
+Occasion
+an ordered factor - the result of converting age from a continuous variable to a count so these slightly unbalanced data can be analyzed as balanced.
+
+Details
+These data are described in Goldstein (1987) as data on the height of a selection of boys from Oxford, England versus a standardized age.
+
+Source
+Pinheiro, J. C. and Bates, D. M. (2000), Mixed-Effects Models in S and S-PLUS, Springer, New York. (Appendix A.19)
+</code></pre>
+</div>
+<div id="多组公用一个数据映射" class="section level3">
+<h3>多组，公用一个数据映射</h3>
+<pre class="r"><code>library(ggplot2)
+ggplot(Oxboys, aes(age, height, group = Subject)) + 
+  geom_point() + 
+  geom_line()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="如果分组指定的不正确下面是没有给出分组默认参数" class="section level3">
+<h3>如果分组指定的不正确,下面是没有给出分组，默认参数</h3>
+<pre class="r"><code>ggplot(Oxboys, aes(age, height)) + 
+  geom_point() + 
+  geom_line()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="不同的组放在不同的图层" class="section level3">
+<h3>不同的组，放在不同的图层</h3>
+<p>回归的线，放在另一个图层里。</p>
+<pre class="r"><code>ggplot(Oxboys, aes(age, height, group = Subject)) + 
+  geom_line() + 
+  geom_smooth(method = &quot;lm&quot;, se = FALSE)</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="在不同的图层设定了不同的数据映射aes" class="section level3">
+<h3>在不同的图层设定了不同的数据映射（aes）</h3>
+<p>ggplot中的数据映射（aes）是所有图层缺省使用的映射，如果本图层指定</p>
+<pre class="r"><code>ggplot(Oxboys, aes(age, height)) + 
+  geom_line(aes(group = Subject)) + 
+  geom_smooth(method = &quot;lm&quot;, size = 2, se = FALSE)</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="重载分组映射" class="section level3">
+<h3>重载分组映射</h3>
+<p>对孩子的身高分段画箱型图</p>
+<pre class="r"><code>ggplot(Oxboys, aes(Occasion, height)) + 
+  geom_boxplot()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>有了<strong>Occsion</strong>这个离散的x值，箱型图是可以了，但是折线图如果用这个映射就不是想要的结果了</p>
+<pre class="r"><code>ggplot(Oxboys, aes(Occasion, height)) + 
+  geom_boxplot() +
+  geom_line(colour = &quot;#3366FF&quot;, alpha = 0.5)</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>为了得到想要的图，所以要重载（override）映射），想要的是体现某个人（Subject）身高变化的折线。都还在长身体 :)</p>
+<pre class="r"><code>ggplot(Oxboys, aes(Occasion, height)) + 
+  geom_boxplot() +
+  geom_line(aes(group = Subject), colour = &quot;#3366FF&quot;, alpha = 0.5)</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="数据对象映射aes要和图形对象匹配" class="section level3">
+<h3>数据对象映射（aes）要和图形对象匹配</h3>
+<p>colour = factor(colour),对数据中的Colour做了处理，是个分类的离散量，只有3个不同的值，与1/3/5的数值无关。</p>
+<pre class="r"><code>df &lt;- data.frame(x = 1:3, y = 1:3, colour = c(1,3,5))
+
+ggplot(df, aes(x, y, colour = factor(colour))) + 
+  geom_line(aes(group = 1), size = 2) +
+  geom_point(size = 5)</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>未做处理的colour = c(1,3,5)，是数值，是个连续的变量，1～5的值都是有的。</p>
+<pre class="r"><code>ggplot(df, aes(x, y, colour = colour)) + 
+  geom_line(aes(group = 1), size = 2) +
+  geom_point(size = 5)</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>这个连续的过度并没有很平滑的过渡，要做到这一点,看下面</p>
+<pre class="r"><code>xgrid &lt;- with(df, seq(min(x), max(x), length = 50))
+interp &lt;- data.frame(
+  x = xgrid,
+  y = approx(df$x, df$y, xout = xgrid)$y,
+  colour = approx(df$x, df$colour, xout = xgrid)$y  
+)
+ggplot(interp, aes(x, y, colour = colour)) + 
+  geom_line(size = 2) +
+  geom_point(data = df, size = 5)</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div id="堆叠的例子" class="section level4">
+<h4>堆叠的例子</h4>
+<pre class="r"><code>ggplot(mpg, aes(class)) + 
+  geom_bar()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(mpg, aes(class, fill = drv)) + 
+  geom_bar()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="连续变量做堆叠是没有意义的" class="section level4">
+<h4>连续变量做堆叠是没有意义的</h4>
+<pre class="r"><code>ggplot(mpg, aes(class, fill = hwy)) + 
+  geom_bar()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(mpg, aes(class, fill = hwy, group = hwy)) + 
+  geom_bar()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><strong>需要使用factor来进行离散处理</strong></p>
+</div>
+</div>
+</div>
+<div id="练习题" class="section level2">
+<h2>练习题</h2>
+<ol style="list-style-type: decimal">
+<li>Draw a boxplot of hwy for each value of cyl, without turning cyl into a factor. What extra aesthetic do you need to set?</li>
+</ol>
+<pre class="r"><code>ggplot(mpg, aes(cyl, hwy)) +
+  geom_boxplot()</code></pre>
+<pre><code>## Warning: Continuous x aesthetic -- did you forget aes(group=...)?</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>找个变量分个组好看点</p>
+<pre class="r"><code>ggplot(mpg, aes(cyl, hwy, group = class)) +
+  geom_boxplot()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<pre class="r"><code>head(mpg)</code></pre>
+<pre><code>## # A tibble: 6 x 11
+##   manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class 
+##   &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; 
+## 1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa…
+## 2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa…
+## 3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa…
+## 4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa…
+## 5 audi         a4      2.8  1999     6 auto(l5)   f        16    26 p     compa…
+## 6 audi         a4      2.8  1999     6 manual(m5) f        18    26 p     compa…</code></pre>
+<p>找个别的变量分个组，比如车的排量。有点意义</p>
+<pre class="r"><code>ggplot(mpg, aes(cyl, hwy, group = displ)) +
+  geom_boxplot()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Modify the following plot so that you get one boxplot per integer value of displ.</li>
+</ol>
+<pre class="r"><code>ggplot(mpg, aes(displ, cty)) + 
+  geom_boxplot()</code></pre>
+<pre><code>## Warning: Continuous x aesthetic -- did you forget aes(group=...)?</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>添加group，factor处理一下连续的变量</p>
+<pre class="r"><code>ggplot(mpg, aes(displ, cty, group = factor(displ))) + 
+  geom_boxplot()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>When illustrating the difference between mapping continuous and discrete colours to a line, the discrete example needed aes(group = 1). Why? What happens if that is omitted? What’s the difference between aes(group = 1) and aes(group = 2)? Why?</li>
+</ol>
+<pre class="r"><code>df &lt;- data.frame(x = 1:3, y = 1:3, colour = c(1,3,5))
+ggplot(df, aes(x, y, colour = colour)) + 
+  geom_line(aes(group = 1), size = 2) +
+  geom_point(size = 5)</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p>颜色连续变化，只显示了1～3这一段</p>
+<pre class="r"><code>df &lt;- data.frame(x = 1:3, y = 1:3, colour = c(1,3,5))
+ggplot(df, aes(x, y, colour = colour)) + 
+  geom_line(size = 2) +
+  geom_point(size = 5)</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p>去掉group = 1,就画不出线来了。对上面的连续的值没有影响。</p>
+<pre class="r"><code>df &lt;- data.frame(x = 1:3, y = 1:3, colour = c(1,3,5))
+
+ggplot(df, aes(x, y, colour = factor(colour))) + 
+  geom_line(size = 2) +
+  geom_point(size = 5)</code></pre>
+<pre><code>## geom_path: Each group consists of only one observation. Do you need to adjust
+## the group aesthetic?</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<pre class="r"><code>df &lt;- data.frame(x = 1:3, y = 1:3, colour = c(1,3,5))
+
+ggplot(df, aes(x, y, colour = factor(colour))) + 
+  geom_line(aes(group = 1), size = 2) +
+  geom_point(size = 5)</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>How many bars are in each of the following plots?</li>
+</ol>
+<pre class="r"><code>ggplot(mpg, aes(drv)) + 
+  geom_bar()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(mpg, aes(drv,color=&quot;white&quot;)) + 
+  geom_bar()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(mpg, aes(drv, fill = hwy, group = hwy)) + 
+  geom_bar()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(mpg, aes(drv, fill = hwy, group = hwy, color=&quot;white&quot;)) + 
+  geom_bar()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<pre class="r"><code>library(dplyr)  </code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>mpg2 &lt;- mpg %&gt;% arrange(hwy) %&gt;% mutate(id = seq_along(hwy)) 
+ggplot(mpg2, aes(drv, fill = hwy, group = id)) + 
+  geom_bar()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<pre class="r"><code>library(dplyr)  
+mpg2 &lt;- mpg %&gt;% arrange(hwy) %&gt;% mutate(id = seq_along(hwy)) 
+ggplot(mpg2, aes(drv, fill = hwy, group = id, color=&quot;white&quot;)) + 
+  geom_bar()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-31-1.png" width="672" />
+(Hint: try adding an outline around each bar with colour = “white”)</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Install the babynames package. It contains data about the popularity of babynames in the US. Run the following code and fix the resulting graph. Why does this graph make me unhappy?</li>
+</ol>
+<pre class="r"><code>library(babynames)
+hadley &lt;- dplyr::filter(babynames, name == &quot;Hadley&quot;)
+ggplot(hadley, aes(year, n)) + 
+  geom_line()</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p>先看看这个数据的结构</p>
+<pre class="r"><code>head(babynames)</code></pre>
+<pre><code>## # A tibble: 6 x 5
+##    year sex   name          n   prop
+##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
+## 1  1880 F     Mary       7065 0.0724
+## 2  1880 F     Anna       2604 0.0267
+## 3  1880 F     Emma       2003 0.0205
+## 4  1880 F     Elizabeth  1939 0.0199
+## 5  1880 F     Minnie     1746 0.0179
+## 6  1880 F     Margaret   1578 0.0162</code></pre>
+<p>每年有男女2个数据，导致图形波动。分开颜色之后发现，是2000年之后女性叫“Hadley”的人数剧增。作者Hadley大约是觉得自己的名字女性化了，有些尴尬？</p>
+<pre class="r"><code>hadley &lt;- dplyr::filter(babynames, name == &quot;Hadley&quot;)
+ggplot(hadley, aes(year, n)) + 
+  geom_line(aes(color=sex))</code></pre>
+<p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="py-0 bg-light border-top-0">
+  <div class="container">
+    <div class="text-center mt-1">
+      <span>© 北河沿 北京 2020 </span>
+    </div>
+  </div>
+ 
+
+</footer>
+
+
+
+
+<script>
+  var indexURL = "https://stevechenzy.github.io/index.json"
+</script>
+
+
+<!-- JS Plugins -->
+
+<script src="https://stevechenzy.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/search/mark.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/search/search.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://stevechenzy.github.io/js/script.min.js"></script>
+</body>
+
+</html>
