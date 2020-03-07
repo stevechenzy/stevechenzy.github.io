@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+  <meta charset="utf-8">
+  <title>Conv 2019</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description"
+    content="疫情的数据R包运用">
+  
+  <meta name="author" content="北河沿">
+  <meta name="generator" content="Hugo 0.64.1" />
+
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/scss/style.min.css" media="screen">
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/css/syntax.css ">
+  
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://stevechenzy.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://stevechenzy.github.io/images/favicon.png " type="image/x-icon">
+
+  
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="fixed-top navigation mx-2">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand"href="https://stevechenzy.github.io/"><img class="img-fluid" src="https://stevechenzy.github.io/images/beiheyan-small.svg" alt="北河沿"></a>
+
+      
+        
+
+    
+
+        <!-- search -->
+        <div class="search">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://stevechenzy.github.io//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="输入搜索关键词 & 回车...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation --> <div class="py-2 d-none d-lg-block"></div> 
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto block shadow 0">
+        <h4>Conv 2019</h4>
+        <div class="mb-3 post-meta">
+          <a href="https://stevechenzy.github.io/author/%e5%8c%97%e6%b2%b3%e6%b2%bf">北河沿</a>,
+          2020-03-07, 
+          <a href="https://stevechenzy.github.io/categories/r">R</a>
+          
+
+        </div>
+        
+        <div class="content mb-0">
+          
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>先做一些准备工作，下载remotes这个包</p>
+<pre class="r"><code># prepare for remote 
+# install.packages(&quot;remotes&quot;)
+# library(remotes)</code></pre>
+<p>用remotes安装GuangchuangYu发布在github上的R包：nCov2019</p>
+<pre class="r"><code># install the package
+# remotes::install_github(&quot;/nCov2019&quot;)
+# library(nCov2019)</code></pre>
+<p>显示一些数据结构</p>
+<pre class="r"><code># load latest data
+#library(nCov2019)
+#x &lt;- get_nCov2019()
+
+# show the total number
+#x
+
+# updated time
+# time(x)</code></pre>
+<pre class="r"><code># open browser 
+# open(x)
+
+# list different provinces
+Sys.setlocale(&quot;LC_ALL&quot;, locale=&quot;zh_CN.UTF-8&quot;)</code></pre>
+<pre><code>## [1] &quot;zh_CN.UTF-8/zh_CN.UTF-8/zh_CN.UTF-8/C/zh_CN.UTF-8/C&quot;</code></pre>
+<pre class="r"><code>library(nCov2019)
+x &lt;- get_nCov2019()
+x[]</code></pre>
+<pre><code>##              name confirm suspect dead deadRate showRate  heal healRate
+## 1           Hubei   67666       0 2959     4.37    FALSE 43468    64.24
+## 2       Guangdong    1352       0    7     0.52    FALSE  1233    91.20
+## 3           Henan    1272       0   22     1.73    FALSE  1243    97.72
+## 4        Zhejiang    1215       0    1     0.08    FALSE  1161    95.56
+## 5           Hunan    1018       0    4     0.39    FALSE   959    94.20
+## 6           Anhui     990       0    6     0.61    FALSE   981    99.09
+## 7         Jiangxi     935       0    1     0.11    FALSE   916    97.97
+## 8        Shandong     758       0    6     0.79    FALSE   626    82.59
+## 9         Jiangsu     631       0    0     0.00    FALSE   601    95.25
+## 10      Chongqing     576       0    6     1.04    FALSE   520    90.28
+## 11        Sichuan     539       0    3     0.56    FALSE   448    83.12
+## 12   Heilongjiang     481       0   13     2.70    FALSE   402    83.58
+## 13        Beijing     426       0    8     1.88    FALSE   303    71.13
+## 14       Shanghai     342       0    3     0.88    FALSE   313    91.52
+## 15          Hebei     318       0    6     1.89    FALSE   305    95.91
+## 16         Fujian     296       0    1     0.34    FALSE   284    95.95
+## 17        Guangxi     252       0    2     0.79    FALSE   219    86.90
+## 18        Shaanxi     245       0    1     0.41    FALSE   226    92.24
+## 19         Yunnan     174       0    2     1.15    FALSE   170    97.70
+## 20         Hainan     168       0    6     3.57    FALSE   158    94.05
+## 21        Guizhou     146       0    2     1.37    FALSE   115    78.77
+## 22        Tianjin     136       0    3     2.21    FALSE   128    94.12
+## 23         Shanxi     133       0    0     0.00    FALSE   126    94.74
+## 24       Liaoning     125       0    1     0.80    FALSE   106    84.80
+## 25          Gansu     119       0    2     1.68    FALSE    87    73.11
+## 26      Hong Kong     108       0    2     1.85    FALSE    51    47.22
+## 27          Jilin      93       0    1     1.08    FALSE    90    96.77
+## 28       Xinjiang      76       0    3     3.95    FALSE    71    93.42
+## 29 Inner Mongolia      75       0    1     1.33    FALSE    65    86.67
+## 30        Ningxia      75       0    0     0.00    FALSE    71    94.67
+## 31         Taiwan      45       0    1     2.22    FALSE    12    26.67
+## 32        Qinghai      18       0    0     0.00    FALSE    18   100.00
+## 33          Macau      10       0    0     0.00    FALSE    10   100.00
+## 34          Tibet       1       0    0     0.00    FALSE     1   100.00
+##    showHeal
+## 1      TRUE
+## 2      TRUE
+## 3      TRUE
+## 4      TRUE
+## 5      TRUE
+## 6      TRUE
+## 7      TRUE
+## 8      TRUE
+## 9      TRUE
+## 10     TRUE
+## 11     TRUE
+## 12     TRUE
+## 13     TRUE
+## 14     TRUE
+## 15     TRUE
+## 16     TRUE
+## 17     TRUE
+## 18     TRUE
+## 19     TRUE
+## 20     TRUE
+## 21     TRUE
+## 22     TRUE
+## 23     TRUE
+## 24     TRUE
+## 25     TRUE
+## 26     TRUE
+## 27     TRUE
+## 28     TRUE
+## 29     TRUE
+## 30     TRUE
+## 31     TRUE
+## 32     TRUE
+## 33     TRUE
+## 34     TRUE</code></pre>
+<pre class="r"><code>#
+library(nCov2019)
+x &lt;- get_nCov2019()
+x[&quot;Hubei&quot;]</code></pre>
+<pre><code>##           name confirm suspect dead deadRate showRate  heal healRate showHeal
+## 1        Wuhan   49871       0 2349     4.71    FALSE 28511    57.17     TRUE
+## 2      Xiaogan    3518       0  123     3.50    FALSE  2972    84.48     TRUE
+## 3    Huanggang    2907       0  125     4.30    FALSE  2582    88.82     TRUE
+## 4     Jingzhou    1580       0   48     3.04    FALSE  1350    85.44     TRUE
+## 5        Ezhou    1394       0   54     3.87    FALSE   956    68.58     TRUE
+## 6      Suizhou    1307       0   43     3.29    FALSE  1048    80.18     TRUE
+## 7    Xiangyang    1175       0   36     3.06    FALSE  1040    88.51     TRUE
+## 8     Huangshi    1015       0   36     3.55    FALSE   877    86.40     TRUE
+## 9      Yichang     931       0   33     3.54    FALSE   707    75.94     TRUE
+## 10     Jingmen     928       0   39     4.20    FALSE   728    78.45     TRUE
+## 11    Xianning     836       0   14     1.67    FALSE   794    94.98     TRUE
+## 12      Shiyan     672       0    8     1.19    FALSE   553    82.29     TRUE
+## 13     Xiantao     575       0   21     3.65    FALSE   497    86.43     TRUE
+## 14     Tianmen     496       0   15     3.02    FALSE   451    90.93     TRUE
+## 15       Enshi     252       0    6     2.38    FALSE   231    91.67     TRUE
+## 16   Qianjiang     198       0    9     4.55    FALSE   160    80.81     TRUE
+## 17 Shennongjia      11       0    0     0.00    FALSE    11   100.00     TRUE</code></pre>
+<pre class="r"><code>library(nCov2019)
+library(ggplot2)
+x &lt;- get_nCov2019()
+c &lt;- x[&#39;Beijing&#39;]
+ggplot(c, aes(name, confirm)) + geom_bar(stat = &quot;identity&quot;)</code></pre>
+<p><img src="/r/ggplot2/conv-2019_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code># newly 
+library(tidyverse)</code></pre>
+<pre><code>## ─ Attaching packages ────────────────── tidyverse 1.3.0 ─</code></pre>
+<pre><code>## ✓ tibble  2.1.3     ✓ dplyr   0.8.4
+## ✓ tidyr   1.0.2     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.4.0
+## ✓ purrr   0.3.3</code></pre>
+<pre><code>## ─ Conflicts ─────────────────── tidyverse_conflicts() ─
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(nCov2019)
+x &lt;- get_nCov2019()
+
+d = x[&#39;global&#39;,] %&gt;% filter(name != &#39;China&#39;)
+d$confirm=as.numeric(d$confirm)
+
+d$name = fct_reorder(d$name, d$confirm)
+
+ggplot(d, aes(name, confirm)) +
+  geom_col(fill=&#39;steelblue&#39;) + coord_flip() +
+  geom_text(aes(y = confirm+2, label=confirm), hjust=0) +
+  theme_minimal(base_size=14) +
+  scale_y_continuous(expand=c(0,10)) +
+  xlab(NULL) + ylab(NULL)</code></pre>
+<p><img src="/r/ggplot2/conv-2019_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code># another plot
+library(nCov2019)
+library(ggplot2)
+x &lt;- get_nCov2019()
+ggplot(summary(x), aes(as.Date(date, &quot;%m.%d&quot;), as.numeric(confirm))) +
+  geom_col(fill=&#39;firebrick&#39;) + theme_minimal(base_size = 14) +
+  xlab(NULL) + ylab(NULL) +
+  labs(caption = paste(&quot;accessed date:&quot;, time(x)))</code></pre>
+<p><img src="/r/ggplot2/conv-2019_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="py-0 bg-light border-top-0">
+  <div class="container">
+    <div class="text-center mt-1">
+      <span>© 北河沿 北京 2020 </span>
+    </div>
+  </div>
+ 
+
+</footer>
+
+
+
+
+<script>
+  var indexURL = "https://stevechenzy.github.io/index.json"
+</script>
+
+
+<!-- JS Plugins -->
+
+<script src="https://stevechenzy.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/search/mark.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/search/search.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://stevechenzy.github.io/js/script.min.js"></script>
+</body>
+
+</html>
