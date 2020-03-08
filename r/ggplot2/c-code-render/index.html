@@ -87,26 +87,249 @@
         
         <div class="content mb-0">
           <h3 id="the-c-code">the C code</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
-    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello world!);</span>
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+<pre><code class="language-c">int main(){
+    printf(&quot;hello world!&quot;);
+    return 0;
 }
-</code></pre></div><h3 id="the-java-code">the java code</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">abd</span><span style="color:#f92672">:</span> CD<span style="color:#f92672">{</span>
-    
-<span style="color:#f92672">}</span>
-</code></pre></div><h3 id="json">json</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">[</span><span style="color:#960050;background-color:#1e0010">1</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#960050;background-color:#1e0010">3</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#960050;background-color:#1e0010">3</span><span style="color:#960050;background-color:#1e0010">]</span>
-    <span style="color:#960050;background-color:#1e0010">b</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#960050;background-color:#1e0010">{</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">b</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">&#39;</span>}
-<span style="color:#960050;background-color:#1e0010">}</span>
-</code></pre></div><h3 id="r">R</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">
-<span style="color:#a6e22e">ggplot</span>(mpg, <span style="color:#a6e22e">aes</span>(cty, hwy)) <span style="color:#f92672">+</span> 
-    <span style="color:#a6e22e">geom_point</span>()
-    
-</code></pre></div>
+</code></pre>
+<h3 id="the-java-code">the Java code</h3>
+<pre><code class="language-{JAVA}">
+/* HelloWorld.java
+ */
+
+public class HelloWorld
+{
+	public static void main(String[] args) {
+		System.out.println(&quot;Hello World!&quot;);
+	}
+}
+
+public class EnhancedFor
+{
+	public static void main(String[] args)
+	{	int[] list ={1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		int sum = sumListEnhanced(list);
+		System.out.println(&quot;Sum of elements in list: &quot; + sum);
+
+		System.out.println(&quot;Original List&quot;);
+		printList(list);
+		System.out.println(&quot;Calling addOne&quot;);
+		addOne(list);
+		System.out.println(&quot;List after call to addOne&quot;);
+		printList(list);
+		System.out.println(&quot;Calling addOneError&quot;);
+		addOneError(list);
+		System.out.println(&quot;List after call to addOneError. Note elements of list did not change.&quot;);
+		printList(list);
+	}
+
+	// pre: list != null
+	// post: return sum of elements
+	// uses enhanced for loop
+	public static int sumListEnhanced(int[] list)
+	{	int total = 0;
+		for(int val : list)
+		{	total += val;
+		}
+		return total;
+	}
+
+	// pre: list != null
+	// post: return sum of elements
+	// use traditional for loop
+	public static int sumListOld(int[] list)
+	{	int total = 0;
+		for(int i = 0; i &lt; list.length; i++)
+		{	total += list[i];
+			System.out.println( list[i] );
+		}
+		return total;
+	}
+
+	// pre: list != null
+	// post: none.
+	// The code appears to add one to every element in the list, but does not
+	public static void addOneError(int[] list)
+	{	for(int val : list)
+		{	val = val + 1;
+		}
+	}
+
+	// pre: list != null
+	// post: adds one to every element of list
+	public static void addOne(int[] list)
+	{	for(int i = 0; i &lt; list.length; i++)
+		{	list[i]++;
+		}
+	}
+
+	public static void printList(int[] list)
+	{	System.out.println(&quot;index, value&quot;);
+		for(int i = 0; i &lt; list.length; i++)
+		{	System.out.println(i + &quot;, &quot; + list[i]);
+		}
+	}
+
+
+
+}
+</code></pre>
+<h3 id="json">json</h3>
+<pre><code class="language-json">{
+    &quot;glossary&quot;: {
+        &quot;title&quot;: &quot;example glossary&quot;,
+		&quot;GlossDiv&quot;: {
+            &quot;title&quot;: &quot;S&quot;,
+			&quot;GlossList&quot;: {
+                &quot;GlossEntry&quot;: {
+                    &quot;ID&quot;: &quot;SGML&quot;,
+					&quot;SortAs&quot;: &quot;SGML&quot;,
+					&quot;GlossTerm&quot;: &quot;Standard Generalized Markup Language&quot;,
+					&quot;Acronym&quot;: &quot;SGML&quot;,
+					&quot;Abbrev&quot;: &quot;ISO 8879:1986&quot;,
+					&quot;GlossDef&quot;: {
+                        &quot;para&quot;: &quot;A meta-markup language, used to create markup languages such as DocBook.&quot;,
+						&quot;GlossSeeAlso&quot;: [&quot;GML&quot;, &quot;XML&quot;]
+                    },
+					&quot;GlossSee&quot;: &quot;markup&quot;
+                }
+            }
+        }
+    }
+}
+
+</code></pre>
+<h3 id="r">R</h3>
+<pre><code class="language-{r}">
+ggplot(mpg, aes(cty, hwy)) + 
+    geom_point()
+
+</code></pre>
+<h3 id="html">HTML</h3>
+<pre><code class="language-{html}">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;helloWorld&lt;/title&gt;
+    &lt;style&gt;
+        div{
+            text-align: center;
+            font-size: 20px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;hello&quot;&gt;hello&lt;/div&gt;
+&lt;/body&gt;
+&lt;script&gt;
+    var oDiv=document.getElementById('hello');
+    oDiv.onclick=function(){
+        alert('hello world!');
+    }
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="css">CSS</h3>
+<pre><code class="language-{css}">/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.cnblogs-markdown .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f !important;
+  color:white;
+  font-size:16px !important;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+.hljs-keyword,.hljs-built_in{
+  color:#66d9ef;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion{
+  color: #75715e;
+}
+
+.hljs-meta{
+  color: #f92672;
+}
+</code></pre>
+<h3 id="javascript">JavaScript</h3>
+<pre><code class="language-{JavaScript}">&lt;script type=&quot;text/javascript&quot;&gt;
+
+var str=&quot;Visit Microsoft!&quot;
+document.write(str.replace(/Microsoft/, &quot;W3School&quot;))
+
+&lt;/script&gt;
+</code></pre>
+
         </div>
       </div>
     </div>

@@ -44,7 +44,7 @@
       <pubDate>Sun, 08 Mar 2020 12:34:11 +0800</pubDate>
       
       <guid>https://stevechenzy.github.io/r/ggplot2/c-code-render/</guid>
-      <description>the C code int main(){ printf(&amp;#34;hello world!); return 0; } the java code class abd: CD{ } json { a: [1,3,3] b: {&amp;#39;ab&amp;#39;:&amp;#39;cd&amp;#39;} } R ggplot(mpg, aes(cty, hwy)) + geom_point()</description>
+      <description>the C code int main(){ printf(&amp;quot;hello world!&amp;quot;); return 0; } the Java code /* HelloWorld.java */ public class HelloWorld { public static void main(String[] args) { System.out.println(&amp;quot;Hello World!&amp;quot;); } } public class EnhancedFor { public static void main(String[] args) {</description>
     </item>
     
     <item>
