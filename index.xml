@@ -6,7 +6,7 @@
     <description>Recent content on 北河沿</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 07 Mar 2020 10:33:30 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2020 12:34:11 +0800</lastBuildDate>
     
 	<atom:link href="https://stevechenzy.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -36,6 +36,15 @@
       
       <guid>https://stevechenzy.github.io/web/hugo/_index-/</guid>
       <description>如何搭建这个网站的过程</description>
+    </item>
+    
+    <item>
+      <title>C Code Render</title>
+      <link>https://stevechenzy.github.io/r/ggplot2/c-code-render/</link>
+      <pubDate>Sun, 08 Mar 2020 12:34:11 +0800</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/ggplot2/c-code-render/</guid>
+      <description>the C code int main(){ printf(&amp;#34;hello world!); return 0; } the java code class abd: CD{ } json { a: [1,3,3] b: {&amp;#39;ab&amp;#39;:&amp;#39;cd&amp;#39;} } R ggplot(mpg, aes(cty, hwy)) + geom_point()</description>
     </item>
     
     <item>

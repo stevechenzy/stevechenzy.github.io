@@ -69,10 +69,12 @@ b <- x['北京']
 b
 ggplot(b, aes(name, confirm)) + 
   geom_bar(stat = "identity", fill = "pink") + 
-  xlab("城区") + 
+  xlab("城区(来源）") + 
   ylab("确诊人数") +
   theme_classic()+
-theme(text = element_text(family = "STHeiti"))   # must be the last one to be sure the right font is oused. 
+  theme(axis.text.x = element_text(angle = -90, vjust = 0.5, hjust = 0.0)) +
+  theme(text = element_text(family = "STHeiti"))   
+# must be the last one to be sure the right font is oused. 
 
 ```
 
