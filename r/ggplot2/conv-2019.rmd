@@ -11,7 +11,7 @@ description: "疫情的数据R包运用"
 # summary: ""
 ---
 
-
+稍微读了一下源代码，理解了语言是如何影响到数据的。还是中文的更好。
 
 先做一些准备工作，下载remotes这个包
 ```{r}
@@ -30,14 +30,16 @@ description: "疫情的数据R包运用"
 显示一些数据结构
 ```{r}
 # load latest data
-#library(nCov2019)
-#x <- get_nCov2019()
+Sys.setlocale("LC_ALL", locale="zh_CN.UTF-8")
+library(nCov2019)
+library(tidyverse)
+x <- get_nCov2019(lang = "zh")
 
 # show the total number
-#x
+x
 
 # updated time
-# time(x)
+time(x)
 ```
 
 ```{r}
@@ -45,54 +47,64 @@ description: "疫情的数据R包运用"
 # open(x)
 
 # list different provinces
-Sys.setlocale("LC_ALL", locale="zh_CN.UTF-8")
-library(nCov2019)
-x <- get_nCov2019()
+#Sys.setlocale("LC_ALL", locale="zh_CN.UTF-8")
+# library(nCov2019)
+# x <- get_nCov2019()
 x[]
 ```
 
 ```{r}
 #
-library(nCov2019)
-x <- get_nCov2019()
-x["Hubei"]
+# library(nCov2019)
+# x <- get_nCov2019()
+x["湖北"]
 
 ```
 
 ```{r}
-library(nCov2019)
-library(ggplot2)
-x <- get_nCov2019()
-c <- x['Beijing']
-ggplot(c, aes(name, confirm)) + geom_bar(stat = "identity")
+#library(nCov2019)
+# library(ggplot2)
+#x <- get_nCov2019()
+b <- x['北京']
+b
+ggplot(b, aes(name, confirm)) + 
+  geom_bar(stat = "identity", fill = "pink") + 
+  xlab("城区") + 
+  ylab("确诊人数") +
+  theme_classic()+
+theme(text = element_text(family = "STHeiti"))   # must be the last one to be sure the right font is oused. 
+
 ```
 
 ```{r}
 # newly 
-library(tidyverse)
-library(nCov2019)
-x <- get_nCov2019()
+# library(tidyverse)
+# library(nCov2019)
+# x <- get_nCov2019()
 
-d = x['global',] %>% filter(name != 'China')
+d = x['global',] %>% filter(name != '中国')
 d$confirm=as.numeric(d$confirm)
 
 d$name = fct_reorder(d$name, d$confirm)
 
 ggplot(d, aes(name, confirm)) +
-  geom_col(fill='steelblue') + coord_flip() +
-  geom_text(aes(y = confirm+2, label=confirm), hjust=0) +
-  theme_minimal(base_size=14) +
-  scale_y_continuous(expand=c(0,10)) +
-  xlab(NULL) + ylab(NULL)
+  geom_col(fill='orange', width = 0.8) + 
+  coord_flip() +
+  geom_text(aes(y = confirm+2, label=confirm),size=2, hjust=0) +
+  theme_minimal(base_size=10) +
+ 
+  xlab(NULL) + ylab(NULL)+
+theme(text = element_text(family = "STHeiti")) 
 ```
 
 ```{r}
 # another plot
-library(nCov2019)
-library(ggplot2)
-x <- get_nCov2019()
+# library(nCov2019)
+# library(ggplot2)
+# x <- get_nCov2019()
 ggplot(summary(x), aes(as.Date(date, "%m.%d"), as.numeric(confirm))) +
   geom_col(fill='firebrick') + theme_minimal(base_size = 14) +
   xlab(NULL) + ylab(NULL) +
-  labs(caption = paste("accessed date:", time(x)))
+  labs(caption = paste("更新时间:", time(x))) +
+  theme(text = element_text(family = "STHeiti")) 
 ```

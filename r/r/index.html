@@ -23,13 +23,19 @@
   
   <link rel="stylesheet" href="https://stevechenzy.github.io/plugins/themify-icons/themify-icons.css ">
   
-  <link rel="stylesheet" href="https://stevechenzy.github.io/css/syntax.css ">
+  <link rel="stylesheet" href="https://stevechenzy.github.io/css/styles/github-gist.css ">
   
   
   <!--Favicon-->
   <link rel="shortcut icon" href="https://stevechenzy.github.io/images/favicon.png " type="image/x-icon">
   <link rel="icon" href="https://stevechenzy.github.io/images/favicon.png " type="image/x-icon">
+  
+  
+  
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+  
   
 
 </head><body>
@@ -82,24 +88,24 @@
         
         <div class="content mb-0">
           <p>R的代码</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">a <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>)
+<span style="color:#a6e22e">print</span>(a)
 </code></pre></div><p>RMrakdown的代码</p>
 <pre><code class="language-{r}" data-lang="{r}">library(ggplot2)
 ggplot(mpg, aes(hwy, cty)) +
     geom_point()
 
 </code></pre><p>C语言的代码例子</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">{</span>
-  <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">hello world!</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+  printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello world!</span><span style="color:#e6db74">&#34;</span>);
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
 </code></pre></div><p>Javascript代码</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="s2">&#34;hello world!&#34;</span>
-<span class="nx">alert</span> <span class="nx">a</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello world!&#34;</span>
+<span style="color:#a6e22e">alert</span> <span style="color:#a6e22e">a</span>
 </code></pre></div><p>Python</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">a</span> <span class="nn">from</span> <span class="nn">c</span> <span class="kn">as</span> <span class="nn">b</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> a from c <span style="color:#f92672">as</span> b
+<span style="color:#66d9ef">print</span>(a)
 </code></pre></div>
         </div>
       </div>

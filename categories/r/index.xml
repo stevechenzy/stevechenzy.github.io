@@ -26,7 +26,7 @@
       <pubDate>Sat, 07 Mar 2020 10:33:30 +0800</pubDate>
       
       <guid>https://stevechenzy.github.io/r/ggplot2/conv-2019/</guid>
-      <description>先做一些准备工作，下载remotes这个包 # prepare for remote # install.packages(&amp;quot;remotes&amp;quot;) # library(remotes) 用remotes安装G</description>
+      <description>稍微读了一下源代码，理解了语言是如何影响到数据的。还是中文的更好。 先做一些准备工</description>
     </item>
     
     <item>

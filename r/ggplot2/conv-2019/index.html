@@ -23,13 +23,19 @@
   
   <link rel="stylesheet" href="https://stevechenzy.github.io/plugins/themify-icons/themify-icons.css ">
   
-  <link rel="stylesheet" href="https://stevechenzy.github.io/css/syntax.css ">
+  <link rel="stylesheet" href="https://stevechenzy.github.io/css/styles/github-gist.css ">
   
   
   <!--Favicon-->
   <link rel="shortcut icon" href="https://stevechenzy.github.io/images/favicon.png " type="image/x-icon">
   <link rel="icon" href="https://stevechenzy.github.io/images/favicon.png " type="image/x-icon">
+  
+  
+  
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+  
   
 
 </head><body>
@@ -85,6 +91,7 @@
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
+<p>稍微读了一下源代码，理解了语言是如何影响到数据的。还是中文的更好。</p>
 <p>先做一些准备工作，下载remotes这个包</p>
 <pre class="r"><code># prepare for remote 
 # install.packages(&quot;remotes&quot;)
@@ -95,154 +102,151 @@
 # library(nCov2019)</code></pre>
 <p>显示一些数据结构</p>
 <pre class="r"><code># load latest data
-#library(nCov2019)
-#x &lt;- get_nCov2019()
+Sys.setlocale(&quot;LC_ALL&quot;, locale=&quot;zh_CN.UTF-8&quot;)</code></pre>
+<pre><code>## [1] &quot;zh_CN.UTF-8/zh_CN.UTF-8/zh_CN.UTF-8/C/zh_CN.UTF-8/en_US.UTF-8&quot;</code></pre>
+<pre class="r"><code>library(nCov2019)
+library(tidyverse)</code></pre>
+<pre><code>## ─ Attaching packages ─────────────────────────────────────────── tidyverse 1.3.0 ─</code></pre>
+<pre><code>## ✓ ggplot2 3.3.0     ✓ purrr   0.3.3
+## ✓ tibble  2.1.3     ✓ dplyr   0.8.4
+## ✓ tidyr   1.0.2     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.4.0</code></pre>
+<pre><code>## ─ Conflicts ───────────────────────────────────────────── tidyverse_conflicts() ─
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>x &lt;- get_nCov2019(lang = &quot;zh&quot;)
 
 # show the total number
-#x
-
-# updated time
-# time(x)</code></pre>
+x</code></pre>
+<pre><code>## China (total confirmed cases): 80859
+## last update: 2020-03-08 10:27:15</code></pre>
+<pre class="r"><code># updated time
+time(x)</code></pre>
+<pre><code>## [1] &quot;2020-03-08 10:27:15&quot;</code></pre>
 <pre class="r"><code># open browser 
 # open(x)
 
 # list different provinces
-Sys.setlocale(&quot;LC_ALL&quot;, locale=&quot;zh_CN.UTF-8&quot;)</code></pre>
-<pre><code>## [1] &quot;zh_CN.UTF-8/zh_CN.UTF-8/zh_CN.UTF-8/C/zh_CN.UTF-8/C&quot;</code></pre>
-<pre class="r"><code>library(nCov2019)
-x &lt;- get_nCov2019()
+#Sys.setlocale(&quot;LC_ALL&quot;, locale=&quot;zh_CN.UTF-8&quot;)
+# library(nCov2019)
+# x &lt;- get_nCov2019()
 x[]</code></pre>
-<pre><code>##              name confirm suspect dead deadRate showRate  heal healRate
-## 1           Hubei   67666       0 2959     4.37    FALSE 43468    64.24
-## 2       Guangdong    1352       0    7     0.52    FALSE  1233    91.20
-## 3           Henan    1272       0   22     1.73    FALSE  1243    97.72
-## 4        Zhejiang    1215       0    1     0.08    FALSE  1161    95.56
-## 5           Hunan    1018       0    4     0.39    FALSE   959    94.20
-## 6           Anhui     990       0    6     0.61    FALSE   981    99.09
-## 7         Jiangxi     935       0    1     0.11    FALSE   916    97.97
-## 8        Shandong     758       0    6     0.79    FALSE   626    82.59
-## 9         Jiangsu     631       0    0     0.00    FALSE   601    95.25
-## 10      Chongqing     576       0    6     1.04    FALSE   520    90.28
-## 11        Sichuan     539       0    3     0.56    FALSE   448    83.12
-## 12   Heilongjiang     481       0   13     2.70    FALSE   402    83.58
-## 13        Beijing     426       0    8     1.88    FALSE   303    71.13
-## 14       Shanghai     342       0    3     0.88    FALSE   313    91.52
-## 15          Hebei     318       0    6     1.89    FALSE   305    95.91
-## 16         Fujian     296       0    1     0.34    FALSE   284    95.95
-## 17        Guangxi     252       0    2     0.79    FALSE   219    86.90
-## 18        Shaanxi     245       0    1     0.41    FALSE   226    92.24
-## 19         Yunnan     174       0    2     1.15    FALSE   170    97.70
-## 20         Hainan     168       0    6     3.57    FALSE   158    94.05
-## 21        Guizhou     146       0    2     1.37    FALSE   115    78.77
-## 22        Tianjin     136       0    3     2.21    FALSE   128    94.12
-## 23         Shanxi     133       0    0     0.00    FALSE   126    94.74
-## 24       Liaoning     125       0    1     0.80    FALSE   106    84.80
-## 25          Gansu     119       0    2     1.68    FALSE    87    73.11
-## 26      Hong Kong     108       0    2     1.85    FALSE    51    47.22
-## 27          Jilin      93       0    1     1.08    FALSE    90    96.77
-## 28       Xinjiang      76       0    3     3.95    FALSE    71    93.42
-## 29 Inner Mongolia      75       0    1     1.33    FALSE    65    86.67
-## 30        Ningxia      75       0    0     0.00    FALSE    71    94.67
-## 31         Taiwan      45       0    1     2.22    FALSE    12    26.67
-## 32        Qinghai      18       0    0     0.00    FALSE    18   100.00
-## 33          Macau      10       0    0     0.00    FALSE    10   100.00
-## 34          Tibet       1       0    0     0.00    FALSE     1   100.00
-##    showHeal
-## 1      TRUE
-## 2      TRUE
-## 3      TRUE
-## 4      TRUE
-## 5      TRUE
-## 6      TRUE
-## 7      TRUE
-## 8      TRUE
-## 9      TRUE
-## 10     TRUE
-## 11     TRUE
-## 12     TRUE
-## 13     TRUE
-## 14     TRUE
-## 15     TRUE
-## 16     TRUE
-## 17     TRUE
-## 18     TRUE
-## 19     TRUE
-## 20     TRUE
-## 21     TRUE
-## 22     TRUE
-## 23     TRUE
-## 24     TRUE
-## 25     TRUE
-## 26     TRUE
-## 27     TRUE
-## 28     TRUE
-## 29     TRUE
-## 30     TRUE
-## 31     TRUE
-## 32     TRUE
-## 33     TRUE
-## 34     TRUE</code></pre>
+<pre><code>##      name confirm suspect dead deadRate showRate  heal healRate showHeal
+## 1    湖北   67707       0 2986     4.41    FALSE 45011    66.48     TRUE
+## 2    广东    1352       0    7     0.52    FALSE  1250    92.46     TRUE
+## 3    河南    1272       0   22     1.73    FALSE  1246    97.96     TRUE
+## 4    浙江    1215       0    1     0.08    FALSE  1169    96.21     TRUE
+## 5    湖南    1018       0    4     0.39    FALSE   965    94.79     TRUE
+## 6    安徽     990       0    6     0.61    FALSE   984    99.39     TRUE
+## 7    江西     935       0    1     0.11    FALSE   918    98.18     TRUE
+## 8    山东     758       0    6     0.79    FALSE   637    84.04     TRUE
+## 9    江苏     631       0    0     0.00    FALSE   610    96.67     TRUE
+## 10   重庆     576       0    6     1.04    FALSE   526    91.32     TRUE
+## 11   四川     539       0    3     0.56    FALSE   457    84.79     TRUE
+## 12 黑龙江     481       0   13     2.70    FALSE   409    85.03     TRUE
+## 13   北京     428       0    8     1.87    FALSE   308    71.96     TRUE
+## 14   上海     342       0    3     0.88    FALSE   313    91.52     TRUE
+## 15   河北     318       0    6     1.89    FALSE   307    96.54     TRUE
+## 16   福建     296       0    1     0.34    FALSE   295    99.66     TRUE
+## 17   广西     252       0    2     0.79    FALSE   223    88.49     TRUE
+## 18   陕西     245       0    1     0.41    FALSE   226    92.24     TRUE
+## 19   云南     174       0    2     1.15    FALSE   170    97.70     TRUE
+## 20   海南     168       0    6     3.57    FALSE   158    94.05     TRUE
+## 21   贵州     146       0    2     1.37    FALSE   117    80.14     TRUE
+## 22   天津     136       0    3     2.21    FALSE   128    94.12     TRUE
+## 23   山西     133       0    0     0.00    FALSE   126    94.74     TRUE
+## 24   辽宁     125       0    1     0.80    FALSE   108    86.40     TRUE
+## 25   甘肃     120       0    2     1.67    FALSE    87    72.50     TRUE
+## 26   香港     109       0    2     1.83    FALSE    55    50.46     TRUE
+## 27   吉林      93       0    1     1.08    FALSE    90    96.77     TRUE
+## 28   新疆      76       0    3     3.95    FALSE    72    94.74     TRUE
+## 29   宁夏      75       0    0     0.00    FALSE    71    94.67     TRUE
+## 30 内蒙古      75       0    1     1.33    FALSE    68    90.67     TRUE
+## 31   台湾      45       0    1     2.22    FALSE    13    28.89     TRUE
+## 32   青海      18       0    0     0.00    FALSE    18   100.00     TRUE
+## 33   澳门      10       0    0     0.00    FALSE    10   100.00     TRUE
+## 34   西藏       1       0    0     0.00    FALSE     1   100.00     TRUE</code></pre>
 <pre class="r"><code>#
-library(nCov2019)
-x &lt;- get_nCov2019()
-x[&quot;Hubei&quot;]</code></pre>
-<pre><code>##           name confirm suspect dead deadRate showRate  heal healRate showHeal
-## 1        Wuhan   49871       0 2349     4.71    FALSE 28511    57.17     TRUE
-## 2      Xiaogan    3518       0  123     3.50    FALSE  2972    84.48     TRUE
-## 3    Huanggang    2907       0  125     4.30    FALSE  2582    88.82     TRUE
-## 4     Jingzhou    1580       0   48     3.04    FALSE  1350    85.44     TRUE
-## 5        Ezhou    1394       0   54     3.87    FALSE   956    68.58     TRUE
-## 6      Suizhou    1307       0   43     3.29    FALSE  1048    80.18     TRUE
-## 7    Xiangyang    1175       0   36     3.06    FALSE  1040    88.51     TRUE
-## 8     Huangshi    1015       0   36     3.55    FALSE   877    86.40     TRUE
-## 9      Yichang     931       0   33     3.54    FALSE   707    75.94     TRUE
-## 10     Jingmen     928       0   39     4.20    FALSE   728    78.45     TRUE
-## 11    Xianning     836       0   14     1.67    FALSE   794    94.98     TRUE
-## 12      Shiyan     672       0    8     1.19    FALSE   553    82.29     TRUE
-## 13     Xiantao     575       0   21     3.65    FALSE   497    86.43     TRUE
-## 14     Tianmen     496       0   15     3.02    FALSE   451    90.93     TRUE
-## 15       Enshi     252       0    6     2.38    FALSE   231    91.67     TRUE
-## 16   Qianjiang     198       0    9     4.55    FALSE   160    80.81     TRUE
-## 17 Shennongjia      11       0    0     0.00    FALSE    11   100.00     TRUE</code></pre>
-<pre class="r"><code>library(nCov2019)
-library(ggplot2)
-x &lt;- get_nCov2019()
-c &lt;- x[&#39;Beijing&#39;]
-ggplot(c, aes(name, confirm)) + geom_bar(stat = &quot;identity&quot;)</code></pre>
+# library(nCov2019)
+# x &lt;- get_nCov2019()
+x[&quot;湖北&quot;]</code></pre>
+<pre><code>##      name confirm suspect dead deadRate showRate  heal healRate showHeal
+## 1    武汉   49912       0 2370     4.75    FALSE 29770    59.64     TRUE
+## 2    孝感    3518       0  125     3.55    FALSE  3024    85.96     TRUE
+## 3    黄冈    2907       0  125     4.30    FALSE  2627    90.37     TRUE
+## 4    荆州    1580       0   49     3.10    FALSE  1376    87.09     TRUE
+## 5    鄂州    1394       0   54     3.87    FALSE   988    70.88     TRUE
+## 6    随州    1307       0   43     3.29    FALSE  1077    82.40     TRUE
+## 7    襄阳    1175       0   38     3.23    FALSE  1055    89.79     TRUE
+## 8    黄石    1015       0   36     3.55    FALSE   884    87.09     TRUE
+## 9    宜昌     931       0   34     3.65    FALSE   727    78.09     TRUE
+## 10   荆门     928       0   39     4.20    FALSE   743    80.06     TRUE
+## 11   咸宁     836       0   14     1.67    FALSE   801    95.81     TRUE
+## 12   十堰     672       0    8     1.19    FALSE   571    84.97     TRUE
+## 13   仙桃     575       0   21     3.65    FALSE   501    87.13     TRUE
+## 14   天门     496       0   15     3.02    FALSE   457    92.14     TRUE
+## 15 恩施州     252       0    6     2.38    FALSE   231    91.67     TRUE
+## 16   潜江     198       0    9     4.55    FALSE   168    84.85     TRUE
+## 17 神农架      11       0    0     0.00    FALSE    11   100.00     TRUE</code></pre>
+<pre class="r"><code>#library(nCov2019)
+# library(ggplot2)
+#x &lt;- get_nCov2019()
+b &lt;- x[&#39;北京&#39;]
+b</code></pre>
+<pre><code>##          name confirm suspect dead deadRate showRate heal healRate showHeal
+## 1        朝阳      72       0    0     0.00    FALSE    0     0.00    FALSE
+## 2        海淀      63       0    0     0.00    FALSE    0     0.00    FALSE
+## 3        西城      53       0    0     0.00    FALSE    0     0.00    FALSE
+## 4        丰台      43       0    0     0.00    FALSE    0     0.00    FALSE
+## 5        大兴      39       0    0     0.00    FALSE    0     0.00    FALSE
+## 6        昌平      29       0    0     0.00    FALSE    0     0.00    FALSE
+## 7    外地来京      25       0    0     0.00    FALSE    0     0.00    FALSE
+## 8        通州      19       0    0     0.00    FALSE    0     0.00    FALSE
+## 9        房山      16       0    0     0.00    FALSE    0     0.00    FALSE
+## 10     石景山      14       0    0     0.00    FALSE    0     0.00    FALSE
+## 11       东城      14       0    0     0.00    FALSE    0     0.00    FALSE
+## 12   境外输入      13       0    0     0.00    FALSE    0     0.00     TRUE
+## 13       顺义      10       0    0     0.00    FALSE    0     0.00    FALSE
+## 14       密云       7       0    0     0.00    FALSE    0     0.00    FALSE
+## 15       怀柔       7       0    0     0.00    FALSE    0     0.00    FALSE
+## 16     门头沟       3       0    0     0.00    FALSE    0     0.00    FALSE
+## 17       延庆       1       0    0     0.00    FALSE    0     0.00    FALSE
+## 18 地区待确认       0       0    8     0.00    FALSE  308     0.00     TRUE</code></pre>
+<pre class="r"><code>ggplot(b, aes(name, confirm)) + 
+  geom_bar(stat = &quot;identity&quot;, fill = &quot;pink&quot;) + 
+  xlab(&quot;城区&quot;) + 
+  ylab(&quot;确诊人数&quot;) +
+  theme_classic()+
+theme(text = element_text(family = &quot;STHeiti&quot;))   # must be the last one to be sure the right font is oused. </code></pre>
 <p><img src="/r/ggplot2/conv-2019_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <pre class="r"><code># newly 
-library(tidyverse)</code></pre>
-<pre><code>## ─ Attaching packages ────────────────── tidyverse 1.3.0 ─</code></pre>
-<pre><code>## ✓ tibble  2.1.3     ✓ dplyr   0.8.4
-## ✓ tidyr   1.0.2     ✓ stringr 1.4.0
-## ✓ readr   1.3.1     ✓ forcats 0.4.0
-## ✓ purrr   0.3.3</code></pre>
-<pre><code>## ─ Conflicts ─────────────────── tidyverse_conflicts() ─
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>library(nCov2019)
-x &lt;- get_nCov2019()
+# library(tidyverse)
+# library(nCov2019)
+# x &lt;- get_nCov2019()
 
-d = x[&#39;global&#39;,] %&gt;% filter(name != &#39;China&#39;)
+d = x[&#39;global&#39;,] %&gt;% filter(name != &#39;中国&#39;)
 d$confirm=as.numeric(d$confirm)
 
 d$name = fct_reorder(d$name, d$confirm)
 
 ggplot(d, aes(name, confirm)) +
-  geom_col(fill=&#39;steelblue&#39;) + coord_flip() +
-  geom_text(aes(y = confirm+2, label=confirm), hjust=0) +
-  theme_minimal(base_size=14) +
-  scale_y_continuous(expand=c(0,10)) +
-  xlab(NULL) + ylab(NULL)</code></pre>
+  geom_col(fill=&#39;orange&#39;, width = 0.8) + 
+  coord_flip() +
+  geom_text(aes(y = confirm+2, label=confirm),size=2, hjust=0) +
+  theme_minimal(base_size=10) +
+ 
+  xlab(NULL) + ylab(NULL)+
+theme(text = element_text(family = &quot;STHeiti&quot;)) </code></pre>
 <p><img src="/r/ggplot2/conv-2019_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <pre class="r"><code># another plot
-library(nCov2019)
-library(ggplot2)
-x &lt;- get_nCov2019()
+# library(nCov2019)
+# library(ggplot2)
+# x &lt;- get_nCov2019()
 ggplot(summary(x), aes(as.Date(date, &quot;%m.%d&quot;), as.numeric(confirm))) +
   geom_col(fill=&#39;firebrick&#39;) + theme_minimal(base_size = 14) +
   xlab(NULL) + ylab(NULL) +
-  labs(caption = paste(&quot;accessed date:&quot;, time(x)))</code></pre>
+  labs(caption = paste(&quot;更新时间:&quot;, time(x))) +
+  theme(text = element_text(family = &quot;STHeiti&quot;)) </code></pre>
 <p><img src="/r/ggplot2/conv-2019_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 
         </div>
