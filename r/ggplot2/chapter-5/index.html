@@ -17,6 +17,8 @@
 
   <link rel="stylesheet" href="https://stevechenzy.github.io/css/styles/monokai-sublime.css ">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  
+
   <script>hljs.initHighlightingOnLoad();</script>
   
   
@@ -156,6 +158,7 @@ ggplot(Oxboys, aes(age, height, group = Subject)) +
 <pre class="r"><code>ggplot(Oxboys, aes(age, height, group = Subject)) + 
   geom_line() + 
   geom_smooth(method = &quot;lm&quot;, se = FALSE)</code></pre>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="在不同的图层设定了不同的数据映射aes" class="section level3">
@@ -164,6 +167,7 @@ ggplot(Oxboys, aes(age, height, group = Subject)) +
 <pre class="r"><code>ggplot(Oxboys, aes(age, height)) + 
   geom_line(aes(group = Subject)) + 
   geom_smooth(method = &quot;lm&quot;, size = 2, se = FALSE)</code></pre>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
 <div id="重载分组映射" class="section level3">
@@ -261,7 +265,7 @@ ggplot(interp, aes(x, y, colour = colour)) +
 </ol>
 <pre class="r"><code>ggplot(mpg, aes(displ, cty)) + 
   geom_boxplot()</code></pre>
-<pre><code>## Warning: Continuous x aesthetic -- did you forget aes(group=...)?</code></pre>
+<pre><code>## Warning: Continuous y aesthetic -- did you forget aes(group=...)?</code></pre>
 <p><img src="/r/ggplot2/chapter-5_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <p>添加group，factor处理一下连续的变量</p>
 <pre class="r"><code>ggplot(mpg, aes(displ, cty, group = factor(displ))) + 

@@ -10,7 +10,9 @@ categories:
  
  
 description: ""
-# summary: ""
+summary: "集合图表（Collective Geom)，对应的数据是多行的。类似与Power BI的汇聚，或者measure（度量值）。
+
+数据的提供，使用了“组映射”（group aesthetic）的方式。连续变量也是需要分段才能够正确的映射。"
 ---
 
 ## 原理

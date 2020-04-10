@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+  <meta charset="utf-8">
+  <title>第七章作业（地图）</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description"
+    content="This is meta description">
+  
+  <meta name="author" content="北河沿">
+  <meta name="generator" content="Hugo 0.64.1" />
+
+    
+  
+<!-- highlight.js Stylesheet -->
+
+  <link rel="stylesheet" href="https://stevechenzy.github.io/css/styles/monokai-sublime.css ">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  
+
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/scss/style.min.css" media="screen">
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://stevechenzy.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://stevechenzy.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://stevechenzy.github.io/images/favicon.png " type="image/x-icon">
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="fixed-top navigation mx-2">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand"href="https://stevechenzy.github.io/"><img class="img-fluid" src="https://stevechenzy.github.io/images/beiheyan-small.svg" alt="北河沿"></a>
+
+      
+        
+
+    
+
+        <!-- search -->
+        <div class="search">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://stevechenzy.github.io//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="输入搜索关键词 & 回车...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation --> <div class="py-2 d-none d-lg-block"></div> 
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto block shadow 0">
+        <h4>第七章作业（地图）</h4>
+        <div class="mb-3 post-meta">
+          <a href="https://stevechenzy.github.io/author/%e5%8c%97%e6%b2%b3%e6%b2%bf">北河沿</a>,
+          2020-04-10, 
+          <a href="https://stevechenzy.github.io/categories/ggplot2">ggplot2</a>
+          
+
+        </div>
+        
+        <div class="content mb-0">
+          
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>有必要的话加载一下库</p>
+<pre class="r"><code>library(ggplot2)
+library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<div id="多边形地图-ploygon-maps" class="section level3">
+<h3>7.1 多边形地图 Ploygon Maps</h3>
+<p>密歇根州的地图数据,是一些经纬度的点。</p>
+<pre class="r"><code>mi_counties &lt;- map_data(&quot;county&quot;, &quot;michigan&quot;) %&gt;% 
+  select(lon = long, lat, group, id = subregion)
+head(mi_counties)</code></pre>
+<pre><code>##         lon      lat group     id
+## 1 -83.88675 44.85686     1 alcona
+## 2 -83.36536 44.86832     1 alcona
+## 3 -83.36536 44.86832     1 alcona
+## 4 -83.33098 44.83968     1 alcona
+## 5 -83.30806 44.80530     1 alcona
+## 6 -83.30233 44.77665     1 alcona</code></pre>
+<p>将这些点画出来，再用坐标系(coord_quickmap) 调整一下，经纬度直接放到笛卡尔坐标系中，看起来比例会失调。</p>
+<pre class="r"><code>ggplot(mi_counties, aes(lon, lat)) + 
+  geom_point(size = .25, show.legend = FALSE, color =&quot;red&quot;) +
+  coord_quickmap()</code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>位置点按group分组，应该是州下面的县吧，一个组一个多边形，填充，加边框。</p>
+<pre class="r"><code>ggplot(mi_counties, aes(lon, lat, group = group)) +
+  geom_polygon(fill = &quot;pink&quot;, colour = &quot;grey50&quot;) + 
+  coord_quickmap()</code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="simple-features-maps-是另一种地图的格式" class="section level3">
+<h3>7.2 7.2 Simple features maps 是另一种地图的格式</h3>
+<p>ozmaps中有相关的SF格式的数据，是澳大利亚的地图数据。</p>
+<pre class="r"><code>library(ozmaps)
+library(sf)</code></pre>
+<pre><code>## Linking to GEOS 3.7.2, GDAL 2.4.2, PROJ 5.2.0</code></pre>
+<pre class="r"><code>oz_states &lt;- ozmaps::ozmap_states
+oz_states</code></pre>
+<pre><code>## Simple feature collection with 9 features and 1 field
+## geometry type:  MULTIPOLYGON
+## dimension:      XY
+## bbox:           xmin: 105.5507 ymin: -43.63203 xmax: 167.9969 ymax: -9.229287
+## epsg (SRID):    4283
+## proj4string:    +proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs
+## # A tibble: 9 x 2
+##   NAME                                                                  geometry
+##   &lt;chr&gt;                                                       &lt;MULTIPOLYGON [°]&gt;
+## 1 New South Wales      (((150.7016 -35.12286, 150.6611 -35.11782, 150.6373 -35.…
+## 2 Victoria             (((146.6196 -38.70196, 146.6721 -38.70259, 146.6744 -38.…
+## 3 Queensland           (((148.8473 -20.3457, 148.8722 -20.37575, 148.8515 -20.3…
+## 4 South Australia      (((137.3481 -34.48242, 137.3749 -34.46885, 137.3805 -34.…
+## 5 Western Australia    (((126.3868 -14.01168, 126.3625 -13.98264, 126.3765 -13.…
+## 6 Tasmania             (((147.8397 -40.29844, 147.8902 -40.30258, 147.8812 -40.…
+## 7 Northern Territory   (((136.3669 -13.84237, 136.3339 -13.83922, 136.3532 -13.…
+## 8 Australian Capital … (((149.2317 -35.222, 149.2346 -35.24047, 149.2716 -35.27…
+## 9 Other Territories    (((167.9333 -29.05421, 167.9188 -29.0344, 167.9313 -29.0…</code></pre>
+<pre class="r"><code>ggplot(oz_states) + 
+  geom_sf() + 
+  coord_sf()</code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div id="地图分层" class="section level4">
+<h4>7.2.1 地图分层</h4>
+<p>一个是州的数据，一个是投票的数据</p>
+<pre class="r"><code>oz_states &lt;- ozmaps::ozmap_states %&gt;% filter(NAME != &quot;Other Territories&quot;)
+oz_votes &lt;- rmapshaper::ms_simplify(ozmaps::abs_ced)</code></pre>
+<pre><code>## Registered S3 method overwritten by &#39;geojsonlint&#39;:
+##   method         from 
+##   print.location dplyr</code></pre>
+<p>分别画到不同的地图层上：</p>
+<pre class="r"><code>ggplot() + 
+  geom_sf(data = oz_states, mapping = aes(fill = NAME), show.legend = FALSE) +
+  geom_sf(data = oz_votes, fill = NA) + 
+  coord_sf()</code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="地图的标注" class="section level4">
+<h4>7.2.2 地图的标注</h4>
+<p>选取指定列表中的区域的数据，按名称分别着色，最后标注一个层。</p>
+<pre class="r"><code># filter electorates in the Sydney metropolitan region
+sydney_map &lt;- ozmaps::abs_ced %&gt;% filter(NAME %in% c(
+  &quot;Sydney&quot;, &quot;Wentworth&quot;, &quot;Warringah&quot;, &quot;Kingsford Smith&quot;, &quot;Grayndler&quot;, &quot;Lowe&quot;, 
+  &quot;North Sydney&quot;, &quot;Barton&quot;, &quot;Bradfield&quot;, &quot;Banks&quot;, &quot;Blaxland&quot;, &quot;Reid&quot;, 
+  &quot;Watson&quot;, &quot;Fowler&quot;, &quot;Werriwa&quot;, &quot;Prospect&quot;, &quot;Parramatta&quot;, &quot;Bennelong&quot;, 
+  &quot;Mackellar&quot;, &quot;Greenway&quot;, &quot;Mitchell&quot;, &quot;Chifley&quot;, &quot;McMahon&quot;
+))
+
+# draw the electoral map of Sydney
+ggplot(sydney_map) + 
+  geom_sf(aes(fill = NAME), show.legend = FALSE) + 
+  coord_sf(xlim = c(150.97, 151.3), ylim = c(-33.98, -33.79)) + 
+  geom_sf_label(aes(label = NAME), label.padding = unit(1, &quot;mm&quot;))</code></pre>
+<pre><code>## Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
+## give correct results for longitude/latitude data</code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="添加一个其它的图形首府的位置经度纬度用点geom_point团层" class="section level4">
+<h4>7.2.3 添加一个其它的图形，首府的位置（经度，纬度），用点（geom_point)团层</h4>
+<pre class="r"><code>oz_capitals &lt;- tibble::tribble( 
+  ~city,           ~lat,     ~lon,
+  &quot;Sydney&quot;,    -33.8688, 151.2093,  
+  &quot;Melbourne&quot;, -37.8136, 144.9631, 
+  &quot;Brisbane&quot;,  -27.4698, 153.0251, 
+  &quot;Adelaide&quot;,  -34.9285, 138.6007, 
+  &quot;Perth&quot;,     -31.9505, 115.8605, 
+  &quot;Hobart&quot;,    -42.8821, 147.3272, 
+  &quot;Canberra&quot;,  -35.2809, 149.1300, 
+  &quot;Darwin&quot;,    -12.4634, 130.8456, 
+)
+
+ggplot() + 
+  geom_sf(data = oz_votes) + 
+  geom_sf(data = oz_states, colour = &quot;black&quot;, fill = NA) + 
+  geom_point(data = oz_capitals, mapping = aes(x = lon, y = lat), colour = &quot;red&quot;) + 
+  coord_sf()</code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+</div>
+<div id="map-projections" class="section level3">
+<h3>7.3 Map projections</h3>
+<p>地球不是一个平面，需要一个地理的坐标系的调整coordinate reference system，CRS</p>
+<pre class="r"><code>st_crs(oz_votes)</code></pre>
+<pre><code>## Coordinate Reference System:
+##   EPSG: 4283 
+##   proj4string: &quot;+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs&quot;</code></pre>
+<p>澳大利亚看起来更精确一些？</p>
+<pre class="r"><code>ggplot(oz_votes) +
+  geom_sf() + 
+  coord_sf(crs = st_crs(&quot;+proj=lcc +datum=WGS84&quot;))</code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre class="r"><code>crs &lt;- &quot;+proj=lcc +datum=WGS84 +lat_0=-25 +lon_0=140 +lat_1=-18 +lat_2=-36&quot;
+ggplot(oz_votes) +
+  geom_sf() + 
+  coord_sf(crs = st_crs(crs))</code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="working-with-sf-data" class="section level3">
+<h3>7.4 Working with sf data</h3>
+<pre class="r"><code>edenmonaro &lt;- ozmaps::abs_ced %&gt;% filter(NAME == &quot;Eden-Monaro&quot;)
+
+p &lt;- ggplot(edenmonaro) + geom_sf()
+p + coord_sf(xlim = c(147.75, 150.25), ylim = c(-37.5, -34.5)) </code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<pre class="r"><code>p + coord_sf(xlim = c(150, 150.25), ylim = c(-36.3, -36)) </code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<pre class="r"><code># p + coord_sf(xlim = c(150, 150.25), ylim = c(-36, -36.3)) 书中有个bug</code></pre>
+<pre class="r"><code>edenmonaro &lt;- edenmonaro %&gt;% pull(geometry)</code></pre>
+<pre class="r"><code>st_bbox(edenmonaro)</code></pre>
+<pre><code>##      xmin      ymin      xmax      ymax 
+## 147.68741 -37.50503 150.23068 -34.53558</code></pre>
+<pre class="r"><code>#&gt;  xmin  ymin  xmax  ymax 
+#&gt; 147.7 -37.5 150.2 -34.5</code></pre>
+<pre class="r"><code>edenmonaro </code></pre>
+<pre><code>## Geometry set for 1 feature 
+## geometry type:  MULTIPOLYGON
+## dimension:      XY
+## bbox:           xmin: 147.6874 ymin: -37.50503 xmax: 150.2307 ymax: -34.53558
+## epsg (SRID):    4283
+## proj4string:    +proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs</code></pre>
+<pre><code>## MULTIPOLYGON (((150.2307 -36.24468, 150.2287 -3...</code></pre>
+<pre class="r"><code>#&gt; Geometry set for 1 feature 
+#&gt; geometry type:  MULTIPOLYGON
+#&gt; MULTIPOLYGON (((150 -36.2, 150 -36.2, 150 -36.3...</code></pre>
+<pre class="r"><code>st_cast(edenmonaro, &quot;POLYGON&quot;)</code></pre>
+<pre><code>## Geometry set for 2 features 
+## geometry type:  POLYGON
+## dimension:      XY
+## bbox:           xmin: 147.6874 ymin: -37.50503 xmax: 150.2307 ymax: -34.53558
+## epsg (SRID):    4283
+## proj4string:    +proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs</code></pre>
+<pre><code>## POLYGON ((150.2307 -36.24468, 150.2287 -36.2490...</code></pre>
+<pre><code>## POLYGON ((148.1345 -36.74374, 148.1366 -36.7393...</code></pre>
+<pre class="r"><code>#&gt; Geometry set for 2 features 
+#&gt; geometry type:  POLYGON
+#&gt; POLYGON ((150 -36.2, 150 -36.2, 150 -36.3, 150 ...
+#&gt; POLYGON ((148 -36.7, 148 -36.7, 148 -36.7, 148 ...</code></pre>
+<pre class="r"><code>dawson &lt;- ozmaps::abs_ced %&gt;% 
+  filter(NAME == &quot;Dawson&quot;) %&gt;% 
+  pull(geometry)
+dawson</code></pre>
+<pre><code>## Geometry set for 1 feature 
+## geometry type:  MULTIPOLYGON
+## dimension:      XY
+## bbox:           xmin: 146.761 ymin: -21.21307 xmax: 149.9114 ymax: -19.18582
+## epsg (SRID):    4283
+## proj4string:    +proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs</code></pre>
+<pre><code>## MULTIPOLYGON (((147.8981 -19.85285, 147.899 -19...</code></pre>
+<pre class="r"><code>#&gt; Geometry set for 1 feature 
+#&gt; geometry type:  MULTIPOLYGON
+#&gt; MULTIPOLYGON (((148 -19.9, 148 -19.8, 148 -19.8...</code></pre>
+<pre class="r"><code>ggplot(dawson) + 
+  geom_sf() +
+  coord_sf()</code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<pre class="r"><code>dawson &lt;- st_cast(dawson, &quot;POLYGON&quot;)
+st_area(dawson)</code></pre>
+<pre><code>## Units: [m^2]
+##  [1] 1.909892e+05 5.882283e+05 2.635586e+07 1.758655e+05 1.129020e+06
+##  [6] 3.003666e+05 2.092691e+05 4.577543e+05 1.466749e+05 9.125599e+05
+## [11] 1.173029e+06 1.212640e+06 2.503836e+05 2.810581e+05 7.973221e+05
+## [16] 1.749108e+05 3.229309e+05 2.677653e+06 3.489708e+06 2.344368e+05
+## [21] 1.894026e+05 4.841221e+05 2.024420e+06 4.763952e+05 1.895080e+05
+## [26] 6.616333e+06 5.354126e+07 4.550664e+06 1.541931e+07 6.376682e+06
+## [31] 3.970536e+06 8.190446e+05 6.879306e+05 1.360343e+05 2.928053e+06
+## [36] 6.173295e+05 3.807525e+05 4.198479e+05 2.696862e+06 2.387335e+06
+## [41] 7.664962e+05 1.057469e+08 1.030827e+07 7.595186e+06 4.434614e+06
+## [46] 4.437562e+05 1.964999e+05 2.147435e+06 6.837429e+05 1.535143e+06
+## [51] 8.109296e+05 2.113259e+06 1.899466e+05 1.409044e+05 1.092670e+07
+## [56] 1.466357e+06 1.691391e+06 5.323031e+06 4.408680e+06 1.028809e+07
+## [61] 6.486412e+06 3.921074e+05 1.088608e+06 3.998037e+05 3.434547e+05
+## [66] 4.227004e+05 4.173320e+06 1.084524e+05 1.106814e+10 3.416470e+07</code></pre>
+<pre class="r"><code>#&gt; Units: [m^2]
+#&gt;  [1] 1.91e+05 5.88e+05 2.64e+07 1.76e+05 1.13e+06 3.00e+05 2.09e+05 4.58e+05
+#&gt;  [9] 1.47e+05 9.13e+05 1.17e+06 1.21e+06 2.50e+05 2.81e+05 7.97e+05 1.75e+05
+#&gt; [17] 3.23e+05 2.68e+06 3.49e+06 2.34e+05 1.89e+05 4.84e+05 2.02e+06 4.76e+05
+#&gt; [25] 1.90e+05 6.62e+06 5.35e+07 4.55e+06 1.54e+07 6.38e+06 3.97e+06 8.19e+05
+#&gt; [33] 6.88e+05 1.36e+05 2.93e+06 6.17e+05 3.81e+05 4.20e+05 2.70e+06 2.39e+06
+#&gt; [41] 7.66e+05 1.06e+08 1.03e+07 7.60e+06 4.43e+06 4.44e+05 1.96e+05 2.15e+06
+#&gt; [49] 6.84e+05 1.54e+06 8.11e+05 2.11e+06 1.90e+05 1.41e+05 1.09e+07 1.47e+06
+#&gt; [57] 1.69e+06 5.32e+06 4.41e+06 1.03e+07 6.49e+06 3.92e+05 1.09e+06 4.00e+05
+#&gt; [65] 3.43e+05 4.23e+05 4.17e+06 1.08e+05 1.11e+10 3.42e+07</code></pre>
+<pre class="r"><code>ggplot(dawson[-69]) + 
+  geom_sf() + 
+  coord_sf()</code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+</div>
+<div id="raster-maps" class="section level3">
+<h3>7.5 Raster maps</h3>
+<p>利用保存过的数据，从github下载mi_raster.rds</p>
+<pre class="r"><code>if (file.exists(&quot;mi_raster.rds&quot;)) {
+  mi_raster &lt;- readRDS(&quot;mi_raster.rds&quot;)
+} else {
+  bbox &lt;- c(
+    min(mi_counties$lon), min(mi_counties$lat),
+    max(mi_counties$lon), max(mi_counties$lat)
+  )
+  mi_raster &lt;- ggmap::get_openstreetmap(bbox, scale = 8735660)
+  saveRDS(mi_raster, &quot;mi_raster.rds&quot;)
+}</code></pre>
+<pre class="r"><code>ggmap::ggmap(mi_raster)</code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<pre class="r"><code>mi_cities &lt;- tbl_df(maps::us.cities) %&gt;%
+  filter(country.etc == &quot;MI&quot;) %&gt;%
+  select(-country.etc, lon = long) 
+
+ggmap::ggmap(mi_raster) +
+  geom_point(aes(size = pop), mi_cities, colour = &quot;red&quot;) +
+  scale_size_area()</code></pre>
+<p><img src="/r/ggplot2/chapter-7_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="py-0 bg-light border-top-0">
+  <div class="container">
+    <div class="text-center mt-1">
+      <span>© 北河沿 北京 2020 </span>
+    </div>
+  </div>
+ 
+
+</footer>
+
+
+
+
+<script>
+  var indexURL = "https://stevechenzy.github.io/index.json"
+</script>
+
+
+<!-- JS Plugins -->
+
+<script src="https://stevechenzy.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/search/mark.js"></script>
+
+<script src="https://stevechenzy.github.io/plugins/search/search.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://stevechenzy.github.io/js/script.min.js"></script>
+</body>
+
+</html>

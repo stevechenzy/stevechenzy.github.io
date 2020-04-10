@@ -6,7 +6,7 @@
     <description>Recent content in R 语言学习 on 北河沿</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 08 Mar 2020 12:34:11 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://stevechenzy.github.io/r/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,6 +18,15 @@
       
       <guid>https://stevechenzy.github.io/r/ggplot2/ggplot2_exercises/</guid>
       <description>R语言中最令人喜欢和有用的就是ggplot2这个做统计图表的神器了，认真地把这本书的作业都做了一下。</description>
+    </item>
+    
+    <item>
+      <title>第七章作业（地图）</title>
+      <link>https://stevechenzy.github.io/r/ggplot2/chapter-7/</link>
+      <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://stevechenzy.github.io/r/ggplot2/chapter-7/</guid>
+      <description>关于地图的几种展示，一共有三种，基本的，SF的，光栅格式的。</description>
     </item>
     
     <item>
@@ -54,7 +63,8 @@ New Cool Posts  </description>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://stevechenzy.github.io/r/ggplot2/chapter-5/</guid>
-      <description>原理 第四章的单个图表（Individual Geom），是对一个观察（observ</description>
+      <description>集合图表（Collective Geom)，对应的数据是多行的。类似与Power BI的汇聚，或者measure（度量值）。
+数据的提供，使用了“组映射”（group aesthetic）的方式。连续变量也是需要分段才能够正确的映射。</description>
     </item>
     
     <item>
